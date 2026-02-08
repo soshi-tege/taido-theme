@@ -1,0 +1,12 @@
+.vscode/
+vendor/
+phpcs.xml
+node_modules/
+composer.lock
+.DS_Store
+*.log
+.sass-cache/
+*.map
+package-lock.json
+.env
+*.sql
