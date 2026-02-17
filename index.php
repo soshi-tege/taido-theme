@@ -14,7 +14,7 @@
 </head>
 <body <?php body_class(); ?>>
 	<?php get_template_part( 'includes/header' ); ?>
-	<h1>Taido Project</h1>
+	<h1>Taido Projaect</h1>
 	<p>Home page content</p>
 	<?php get_footer(); ?>
 </body>
