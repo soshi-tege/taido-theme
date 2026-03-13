@@ -18,10 +18,10 @@
 	<main>
 		<section class="not-found not-found-404">
 			<div class="not-found__inner inner">
-				<h1 class="not-found__title">ページが見つかりませんでした。</h1>
+				<h1 class="not-found__title">Page not found.</h1>
 				<p class="not-found__description">
-				お探しのページは移動または削除された可能性があります。<br>
-				URLの誤りがないかご確認ください。
+				The page you are looking for may have been moved or deleted.<br>
+				Please check your URL.
 				</p>
 			</div>
 		</section>

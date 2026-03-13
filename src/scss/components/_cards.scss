@@ -1,0 +1,22 @@
+@use "base" as *;
+
+.cards {
+	gap: rem(24px);
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	list-style-type: none;
+}
+
+.cards__item {
+	width: calc((100% - rem(64px)) / 3);
+	min-width: rem(320px);
+}
+
+
+
+.cards__item--half {
+	width: calc((100% - rem(48px)) / 2);
+	min-width: rem(480px);
+}

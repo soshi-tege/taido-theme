@@ -1,2 +1,2 @@
-@forward "reset";
-@forward "variable";
+@forward "reset"; // sanitize.cssを最初に読み込む
+@forward "setting";

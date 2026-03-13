@@ -1,0 +1,14 @@
+@use "base" as *;
+
+.inner {
+  width: 100%;
+  padding-right: $padding-sp;
+  padding-left: $padding-sp;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq("md") {
+    max-width: 1330px;
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+  }
+}

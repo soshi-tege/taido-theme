@@ -1,0 +1,9 @@
+@use "base" as *;
+
+.button {
+	display: inline-block;
+	padding: rem(12px) rem(24px);
+	color: #ffffff;
+	background-color: $primary-color;
+	text-decoration: none;
+}

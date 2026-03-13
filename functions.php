@@ -33,6 +33,8 @@ add_filter( 'body_class', 'add_slug' );
 
 /**
  * CSSの読み込み
+ *
+ * @return void
  */
 function theme_scripts() {
 	wp_enqueue_style(
@@ -44,3 +46,20 @@ function theme_scripts() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+
+
+/**
+ * Google Fontの読み込み
+ *
+ * @return void
+ */
+function font_enqueue() {
+	wp_enqueue_style(
+		'texturina-google-font',
+		'https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap',
+		array(),
+		'1.0',
+		'all'
+	);
+}
+add_action( 'wp_enqueue_scripts', 'font_enqueue' );

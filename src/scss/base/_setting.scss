@@ -1,0 +1,82 @@
+@use "sass:math";
+@use "sass:map";
+
+html {
+	font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+// フォント設定
+$base-font-family: "Texturina", serif;
+
+body {
+	font-family: $base-font-family;
+}
+
+// 共通の色
+$black: #000000;
+$primary-color: #E97D3F; // テーマカラー
+$secondary-color: #108EEE; // テーマカラーの補色
+$white: #ffffff;
+
+
+// 頻繁に使うpadding（inner共通）
+$padding-pc: 25px;
+$padding-sp: 15px;
+
+//ブレイクポイント
+$breakpoints: (
+	sm: 600,
+	md: 768,
+	lg: 1024,
+	xl: 1440,
+);
+
+//メディアクエリー
+$mediaquerys: (
+	sm: "screen and (min-width: #{map.get($breakpoints,'sm')}px)",
+	md: "screen and (min-width: #{map.get($breakpoints,'md')}px)",
+	lg: "screen and (min-width: #{map.get($breakpoints,'lg')}px)",
+	xl: "screen and (min-width: #{map.get($breakpoints,'xl')}px)",
+);
+
+// @include mq(){}で書くとブレイクポイントが反映される（初期値はmd）
+@mixin mq($mediaquery: md) {
+	@media #{map.get($mediaquerys, $mediaquery)} {
+		@content;
+	}
+}
+
+// pixelを自動でremに変換（16pixel = 1rem）
+@function rem($pixels) {
+	@return math.div($pixels, 16px) * 1rem;
+}
+
+// 表示設定
+//768px以上を表示
+.desktop {
+	display: none;
+
+	@include mq("md") {
+		display: block;
+	}
+}
+
+//768px以下のみ表示
+.mobile {
+	@include mq("md") {
+		display: none;
+	}
+}
+
+// 768px以上のみ固定
+.fixed-md {
+	@include mq("md") {
+		position: fixed;
+	}
+}
