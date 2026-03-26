@@ -1,3 +1,4 @@
+top-video/
 .vscode/
 vendor/
 phpcs.xml
@@ -10,4 +11,3 @@ composer.lock
 package-lock.json
 .env
 *.sql
-*.mp4
