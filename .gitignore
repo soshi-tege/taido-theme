@@ -10,4 +10,4 @@ composer.lock
 package-lock.json
 .env
 *.sql
-top-video/
+*.mp4
