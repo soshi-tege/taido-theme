@@ -1,0 +1,14 @@
+@use "base" as *;
+
+.award__button {
+	display: table;
+	margin-top: rem(32px);
+	margin-bottom: rem(32px);
+	margin-left: auto;
+	margin-right: auto;
+
+	@include mq("md") {
+		margin-top: rem(64px);
+		margin-bottom: rem(64px);
+	}
+}

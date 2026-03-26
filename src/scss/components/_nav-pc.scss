@@ -1,0 +1,7 @@
+.nav-pc__items { 
+	display: flex;
+}
+
+.nav-pc__item ~ .nav-pc__item {
+	margin-left: 32px;
+}

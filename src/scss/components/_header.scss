@@ -5,21 +5,77 @@
 	padding: 10px 0;
 	background-color: #ffffff;
 	border-bottom: 1px solid black;
+	z-index: 1;
 }
 
 .header a {
-	color: $black;
 	text-decoration: none;
+	color: $white;
+
+	@include mq("md") {
+		color: $black;
+	}
 }
 
 .header__inner {
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.header__nav {
+.header__nav-pc {
 	margin-left: auto;
 }
 
 .header__logo {
-	max-width: 158px;
+	max-width: rem(158px);
+}
+
+.header__drawer {
+	position: relative;
+	z-index: 100;
+	width: rem(20px);
+	height: rem(20px);
+	appearance: none;
+	background: transparent;
+	border: none;
+	outline: none;
+}
+
+.header__drawer span {
+	position: absolute;
+	left: 0;
+	width: inherit;
+	height: rem(2px);
+	background-color: $black;
+	transition: 0.3s;
+}
+
+.header__drawer span:nth-child(1) {
+	top: 0;
+}
+
+.header__drawer span:nth-child(2) {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.header__drawer span:nth-child(3) {
+	bottom: 0;
+}
+
+.header__drawer.is-active span:nth-child(1) {
+	// (hamburgerの高さ - spanの高さ) / 2
+	top: rem(9px);
+	transform: rotate(45deg);
+}
+
+.header__drawer.is-active span:nth-child(2) {
+	opacity: 0;
+}
+
+.header__drawer.is-active span:nth-child(3) {
+	// (hamburgerの高さ - spanの高さ) / 2
+	bottom: rem(9px);
+	transform: rotate(-45deg);
 }

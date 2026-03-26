@@ -18,14 +18,24 @@
 }
 
 .cards__item--half .card__img {
-	width: 40%;
 	aspect-ratio: 3 / 2;
+	@include mq("md") {
+		width: 40%;
+	}
 }
 
 .card__content {
 	display: flex;
+	flex-direction: column;
 	align-items: flex-start;
 	gap: rem(12px);
+
+	@include mq("md") {
+		flex-direction: row;
+		display: flex;
+		align-items: flex-start;
+		gap: rem(12px);
+	}
 }
 
 .card__content--vertical {

@@ -16,6 +16,7 @@ $base-font-family: "Texturina", serif;
 
 body {
 	font-family: $base-font-family;
+	line-height: 1.5;
 }
 
 // 共通の色
@@ -74,9 +75,18 @@ $mediaquerys: (
 	}
 }
 
+.fixed {
+	position: fixed;
+}
+
 // 768px以上のみ固定
 .fixed-md {
 	@include mq("md") {
 		position: fixed;
 	}
+}
+
+// inline-blockに指定（改行位置の指定等に使える）
+.inline-block {
+	display: inline-block;
 }

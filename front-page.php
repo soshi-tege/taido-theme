@@ -15,8 +15,19 @@
 <body <?php body_class(); ?>>
 	<?php get_template_part( 'includes/header' ); ?>
 	<section class="hero">
-		<p class="hero__message">Make yourself heard</p>
-		<video id="top-animation" style="width: 100vw; height: 100vh; object-fit: cover;" autoplay muted loop>
+		<div class="hero__inner">
+			<div class="hero__message">
+				<p class="hero__message-text">
+					<span class="inline-block">You Have a Voice</span> <span class="inline-block">that Deserves Attention.</span><br>
+				</p>
+			</div>
+			<div class="hero__message">
+				<p class="hero__message-text hero__message-text--second">
+					<span class="inline-block">Make it Echo</span> <span class="inline-block">throughout the World Together.</span>
+				</p>
+			</div>
+		</div>
+		<video id="top-animation" class="hero__video" autoplay muted loop>
 			<?php
 			// エディター上のカスタムフィールドから動画を取得.
 			$video_id = get_post_meta( get_the_ID(), 'top-video', true );
@@ -31,6 +42,12 @@
 			Your browser doesn't support the video tag.
 		</video>
 	</section>
+	<?php
+	// If there is a new award coming up.
+	if ( get_the_content() ) :
+		get_template_part( 'includes/award' );
+		endif;
+	?>
 	<section class="works section">
 		<div class="works__inner inner">
 			<h2 class="works__heading heading">
@@ -58,7 +75,7 @@
 					$the_query->the_post();
 					?>
 					<li class="cards__item card">
-						<a href="#">
+						<a href="<?php echo esc_url( get_permalink() ); ?>">
 							<div class="card__content card__content--vertical">
 								<?php
 								// アイキャッチ画像を取得（無い場合テーマ内蔵のNo Imageを表示）.
@@ -144,8 +161,8 @@
 				while ( $the_query->have_posts() ) :
 					$the_query->the_post();
 					?>
-				<li class="cards__item--half cards__card card">
-					<a href="#">
+				<li class="cards__item--half cards__item card">
+					<a href="<?php echo esc_url( get_permalink() ); ?>">
 						<div class="card__content">
 							<?php
 							$this_id = get_post_thumbnail_id();
@@ -232,11 +249,13 @@
 				Become Part of Our Inclusive Community
 			</h2>
 			<p class="cta__paragraph paragraph">
-			If you are a passionate youth with a burning passion, you can begin showing it to the world by:
+				If you are a passionate youth with a burning passion, you can begin showing it to the world by:
+			</p>
 			<ul>
 				<li>Joining our animation learning platform</li>
 				<li>Submitting your work to our animation award</li>
 			</ul>
+			<p>
 			If you wish to be part of our community that supports multicultural cooperation and inclusion, support us through partnership.
 			</p>
 			<div class="cta__buttons">
@@ -252,34 +271,12 @@
 			</div>
 		</div>
 	</section>
-	<!-- If there is a new award coming up -->
-	<section class="award section">
-		<div class="award__inner inner">
-			<h2 class="award__heading heading">
-				We Need Your Unique Passions and Talents
-			</h2>
-			<p class="award__paragraph paragraph">
-				Learn more about our award system
-			</p>
-			<div class="accordion">
-				<details class="award__accordion accordion__details">
-					<summary class="accordion__summary">
-						<span role="term" aria-details="pure-css">Find out about the details and eligibility</span>
-					</summary>
-				</details>
-				<div role="definition" class="accordion__content">
-					<?php if ( get_the_content() ) : ?>
-						<?php the_content(); ?>
-					<?php else : ?>
-					<p>There is no upcoming award.</p>
-					<?php endif; ?>
-				</div>
-			</div>
-			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="award__button button">
-				Contact us for any question
-			</a>
-		</div>
-	</section>
+	<!-- If there is NO award coming up -->
+	<?php
+	if ( ! get_the_content() ) :
+		get_template_part( 'includes/award' );
+		endif;
+	?>
 	<?php get_footer(); ?>
 </body>
 </html>

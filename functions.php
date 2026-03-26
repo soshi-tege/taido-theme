@@ -32,11 +32,11 @@ add_filter( 'body_class', 'add_slug' );
 
 
 /**
- * CSSの読み込み
+ * CSSとJSの読み込み
  *
  * @return void
  */
-function theme_scripts() {
+function theme_script_init() {
 	wp_enqueue_style(
 		'theme-style',
 		get_template_directory_uri() . '/css/style.css',
@@ -44,8 +44,15 @@ function theme_scripts() {
 		'1.0',
 		'all'
 	);
+	wp_enqueue_script(
+		'theme-script',
+		get_template_directory_uri() . '/js/script.js',
+		array(),
+		'1.0',
+		true
+	);
 }
-add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+add_action( 'wp_enqueue_scripts', 'theme_script_init' );
 
 
 /**

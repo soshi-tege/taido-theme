@@ -27,7 +27,7 @@
 				while ( have_posts() ) :
 					the_post();
 					?>
-				<li class="cards__item cards__card card">
+				<li class="cards__item cards__item card">
 					<a href="<?php the_permalink(); ?>">
 						<div class="card__content card__content--vertical">
 							<?php

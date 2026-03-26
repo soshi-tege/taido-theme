@@ -7,7 +7,7 @@
   margin-right: auto;
   margin-left: auto;
   @include mq("md") {
-    max-width: 1330px;
+    max-width: 1280px;
     padding-right: $padding-pc;
     padding-left: $padding-pc;
   }
