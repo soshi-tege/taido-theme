@@ -27,20 +27,24 @@
 				</p>
 			</div>
 		</div>
+		<?php
+		// エディター上のカスタムフィールドから動画を取得.
+		$video_id = get_post_meta( get_the_ID(), 'top-video', true );
+		if ( $video_id ) :
+			$video_src = wp_get_attachment_url( $video_id );
+			?>
 		<video id="top-animation" class="hero__video" autoplay muted loop>
-			<?php
-			// エディター上のカスタムフィールドから動画を取得.
-			$video_id = get_post_meta( get_the_ID(), 'top-video', true );
-			if ( $video_id ) :
-				$video_src = wp_get_attachment_url( $video_id );
-				// 動画が見つからない際の予備.
-				else :
-					$video_src = get_template_directory_uri() . '/top-video/default.mp4';
-				endif;
-				?>
 			<source src="<?php echo esc_url( $video_src ); ?>" type="video/mp4">
-			Your browser doesn't support the video tag.
+			<div style="background: #000000;"></div>
 		</video>
+			<?php
+			// 動画が見つからない際の予備.
+		else :
+			?>
+			<div class="hero__video" style="background: #000000;"></div>
+			<?php
+		endif;
+		?>
 	</section>
 	<?php
 	// If there is a new award coming up.
