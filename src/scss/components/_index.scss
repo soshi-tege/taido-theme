@@ -1,15 +1,2 @@
-@forward "award";
-@forward "header";
-@forward "footer";
-@forward "nav-pc";
-@forward "nav-sp";
-@forward "inner";
-@forward "heading";
-@forward "paragraph";
-@forward "cards";
-@forward "card";
-@forward "button";
-@forward "logo-scroll";
-@forward "accordion";
-@forward "section";
-@forward "pagenation";
+@use "section";
+@use "ui";

@@ -6,12 +6,18 @@
  */
 
 ?>
+<?php // トップページのみ先頭固定＋スクロールで表示 ?>
 <header class="header 
 <?php
 if ( is_front_page() ) {
-	echo 'fixed'; }
+	echo 'fixed hidden'; }
 ?>
-">
+" 
+<?php
+if ( is_front_page() ) {
+	echo "id='header'"; }
+?>
+>
 	<div class="header__inner inner">
 		<a class="header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/common/logo.png" alt="Arc and Beyond"></a>
 		<nav class="header__nav-pc nav-pc desktop">

@@ -79,6 +79,10 @@ $mediaquerys: (
 	position: fixed;
 }
 
+.hidden {
+	display: none;
+}
+
 // 768px以上のみ固定
 .fixed-md {
 	@include mq("md") {

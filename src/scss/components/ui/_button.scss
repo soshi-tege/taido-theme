@@ -6,4 +6,9 @@
 	color: #ffffff;
 	background-color: $primary-color;
 	text-decoration: none;
+	transition: 0.3s;
+}
+
+.button:hover {
+	filter: brightness(1.2);
 }

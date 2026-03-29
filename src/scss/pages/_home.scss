@@ -51,6 +51,7 @@
 	-webkit-text-stroke: 3px #000000;
 	transform: translateY(100%);
 	animation-duration: 0.8s;
+	animation-delay: 0.5s;
 	animation-name: popup;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
@@ -61,7 +62,7 @@
 }
 
 .hero__message-text--second {
-	animation-delay: 1s;
+	animation-delay: 1.5s;
 }
 
 @keyframes popup {

@@ -21,7 +21,11 @@
 				</summary>
 			</details>
 			<div role="definition" class="accordion__content">
+				<?php if ( get_the_content() ) : ?>
+					<?php the_content(); ?>
+				<?php else : ?>
 				<p>There is no upcoming award.</p>
+				<?php endif; ?>
 			</div>
 		</div>
 		<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="award__button button">

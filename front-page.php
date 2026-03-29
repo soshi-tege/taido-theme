@@ -14,6 +14,7 @@
 </head>
 <body <?php body_class(); ?>>
 	<?php get_template_part( 'includes/header' ); ?>
+	<?php get_template_part( 'includes/preloader' ); ?>
 	<section class="hero">
 		<div class="hero__inner">
 			<div class="hero__message">
