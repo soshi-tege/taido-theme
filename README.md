@@ -1,48 +1,57 @@
-# Taido Project Theme
 
-Taido Project 用の WordPress テーマです。
+# Taido Project テーマ
 
-## 必要要件
+Arc & Beyond社 Taido Project 専用のWordPressテーマです。
 
-- Node.js (gulp ビルド用)
-- PHP + Composer (PHPCS 用)
+## 必要環境
 
-## インストール
+- Node.js（Gulpによるビルド用）
+- PHP + Composer（PHPCSによるコードチェック用）
+
+## インストール手順
 
 ```bash
 npm install
 composer install
 ```
 
-## CSS ビルド
+## 主な機能
 
-SCSS のソースは `src/scss/` にあります。コンパイルと minify 済みの CSS は sourcemaps 付きで `css/style.css` に出力されます。
+- SCSS（`src/scss/`）からCSS（`css/style.css`）への自動コンパイル・圧縮・ソースマップ生成
+- 画像（`src/images/`）の自動圧縮・最適化
+- PHP/HTML/SCSS/画像の変更監視と自動ビルド・ブラウザリロード
+- WordPress Coding Standards（PHPCS）によるコード品質チェック
+
+## 主なコマンド
+
+### CSS/画像ビルド
 
 ```bash
 npx gulp build
 ```
 
-## 監視
+### 監視・自動リロード
 
 ```bash
 npx gulp watch
 ```
 
-## Lint (PHPCS)
-
-このリポジトリには Composer 経由で WordPress Coding Standards が含まれています。PHPCS は vendor 配下から実行できます。
+### コードチェック（Lint）
 
 ```bash
 ./vendor/bin/phpcs
 ```
 
-## 構成
+## ディレクトリ構成
 
-- `src/scss/` - SCSS ソース
-- `css/` - コンパイル済み CSS 出力
-- `templates/` - テーマテンプレート
-- `includes/` - パーシャルとインクルード
+- `src/scss/`：SCSSソース
+- `css/`：ビルド済みCSS
+- `src/images/`：画像ソース
+- `images/`：圧縮済み画像
+- `includes/`：パーシャル・インクルード
+- `vendor/`：Composer依存パッケージ
 
 ## 備考
 
-- テーマのメタ情報は `style.css` に定義されています。
+- テーマの詳細情報は `style.css` に記載
+- `.env` の `LOCAL_URL` を設定することで、ローカル環境での自動リロードが有効化されます

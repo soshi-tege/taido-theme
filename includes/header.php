@@ -6,7 +6,7 @@
  */
 
 ?>
-<?php // トップページのみ先頭固定＋スクロールで表示 ?>
+<?php // トップページのみ先頭固定＋スクロールで表示. ?>
 <header class="header 
 <?php
 if ( is_front_page() ) {

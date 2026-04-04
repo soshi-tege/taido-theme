@@ -1,0 +1,40 @@
+// WordPressの投稿のみに使用する設定
+@use "base" as *;
+
+.post {
+	h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		font-style: italic;
+	}
+
+	h4 {
+		font-size: 1.2rem;
+	}
+
+	h5 {
+		font-size: 1.2rem;
+		font-style: italic;
+	}
+
+	h6 {
+		font-size: 1rem;
+	}
+
+	th,
+	td {
+		border: 1px solid $black;
+		padding: rem(8px);
+	}
+
+	a:hover {
+		filter: brightness(1.2);
+	}
+}
