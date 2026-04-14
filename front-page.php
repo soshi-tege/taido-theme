@@ -140,7 +140,9 @@
 				The Japanese Anime industry with decades of history needs fresh, international talent.<br>
 				We are working to connect overseas young talents with the industry for a more equitable, inclusive environment with open job opportunities and cultural interactions.
 			</p>
-			<img class="mission__image" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/mission.jpg" alt="">
+			<div class="mission__slideshow">
+    			<img class="mission__image" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/mission.jpg" alt="">
+			</div>
 			<a href="<?php echo esc_url( home_url( '/mission/' ) ); ?>" class="mission__button button">
 				Our Mission
 			</a>
