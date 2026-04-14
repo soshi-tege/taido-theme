@@ -56,7 +56,7 @@
 	<section class="works section">
 		<div class="works__inner inner">
 			<h2 class="works__heading heading">
-				Your Voice Deserves to be Heard
+				Hope. Learn. And Become.
 			</h2>
 			<p class="works__paragraph paragraph">
 				We are looking for the young passion waiting to be discovered inside your heart.<br>
