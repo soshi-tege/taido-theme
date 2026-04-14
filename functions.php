@@ -37,36 +37,34 @@ add_filter( 'body_class', 'add_slug' );
  * @return void
  */
 function theme_script_init() {
+	$theme_version  = wp_get_theme()->get( 'Version' );
+	$fonts_path     = get_template_directory() . '/css/google-fonts.css';
+	$style_path     = get_template_directory() . '/css/style.css';
+	$script_path    = get_template_directory() . '/js/script.js';
+	$fonts_version  = file_exists( $fonts_path ) ? (string) filemtime( $fonts_path ) : $theme_version;
+	$style_version  = file_exists( $style_path ) ? (string) filemtime( $style_path ) : $theme_version;
+	$script_version = file_exists( $script_path ) ? (string) filemtime( $script_path ) : $theme_version;
+
+	wp_enqueue_style(
+		'theme-google-fonts',
+		get_template_directory_uri() . '/css/google-fonts.css',
+		array(),
+		$fonts_version,
+		'all'
+	);
 	wp_enqueue_style(
 		'theme-style',
 		get_template_directory_uri() . '/css/style.css',
-		array(),
-		'1.0',
+		array( 'theme-google-fonts' ),
+		$style_version,
 		'all'
 	);
 	wp_enqueue_script(
 		'theme-script',
 		get_template_directory_uri() . '/js/script.js',
 		array(),
-		'1.0',
+		$script_version,
 		true
 	);
 }
 add_action( 'wp_enqueue_scripts', 'theme_script_init' );
-
-
-/**
- * Google Fontの読み込み
- *
- * @return void
- */
-function font_enqueue() {
-	wp_enqueue_style(
-		'texturina-google-font',
-		'https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap',
-		array(),
-		'1.0',
-		'all'
-	);
-}
-add_action( 'wp_enqueue_scripts', 'font_enqueue' );

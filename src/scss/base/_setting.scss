@@ -12,10 +12,12 @@ html {
 }
 
 // フォント設定
-$base-font-family: "Texturina", serif;
+$base-font: "Titillium Web", "Arial", sans-serif; // デフォルト
+$headline-font: "Texturina", serif; // タイトルなど
+$accent-font: "Chakra Petch", serif; // タイトル以外でアクセントをつける際使用
 
 body {
-	font-family: $base-font-family;
+	font-family: $base-font;
 	line-height: 1.5;
 }
 
