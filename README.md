@@ -8,12 +8,27 @@ Arc & Beyond社 Taido Project 専用のWordPressテーマです。
 - Node.js（Gulpによるビルド用）
 - PHP + Composer（PHPCSによるコードチェック用）
 
-## インストール手順
+## テーマの編集手順（開発者用）
+
+1. [GitHub リポジトリ](https://github.com/soshi-tege/taido-theme) からリポジトリを取得し、作業用ブランチを作成します。（重要：mainブランチへの直接の git push はブロックされます）
+2. ローカル環境で「Taido Project」テーマを有効化します。
+3. 任意のエディターで該当ファイルを編集します。
+4. フロントページや投稿ページを開き、表示崩れがないことを確認します。
+5. 変更内容を git push して Pull Request を作成し、テーマ管理者（@soshi-tege）をメンションします。
+
+## 開発依存パッケージのインストール
 
 ```bash
 npm install
 composer install
 ```
+
+## 更新手順（本番環境）
+
+1. WordPress管理画面の「外観 > テーマ」で、現在のバージョンを確認します。
+2. 管理者メニューの「Deployer for Git」を開きます。
+3. 「Update Theme」をクリックして更新を実行します。
+4. 更新後に再度「外観 > テーマ」を開き、バージョンが更新されていることを確認します。
 
 ## 主な機能
 
@@ -27,7 +42,7 @@ composer install
 ### CSS/画像ビルド
 
 ```bash
-npx gulp build
+npx gulp
 ```
 
 ### 監視・自動リロード
@@ -54,4 +69,4 @@ npx gulp watch
 ## 備考
 
 - テーマの詳細情報は `style.css` に記載
-- `.env` の `LOCAL_URL` を設定することで、ローカル環境での自動リロードが有効化されます
+- `.env` の `LOCAL_URL` を設定することで、ローカル環境での自動リロードが有効化されます（ファイルを保存する度に更新され、複数画面での開発において便利です）
