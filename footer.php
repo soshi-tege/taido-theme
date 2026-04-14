@@ -38,7 +38,7 @@
 				</a>
 				</li>
 				<li class="footer__item">
-				<a href="<?php echo esc_url( home_url( '/partner/' ) ); ?>">
+				<a href="<?php echo esc_url( home_url( '/partners/' ) ); ?>">
 					Partners
 				</a>
 				</li>
