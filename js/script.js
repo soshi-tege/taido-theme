@@ -22,6 +22,11 @@ if (typeof (Storage) !== "undefined") {
 	}
 }
 
+// フェイディングスライドショー
+const slideshowImages = document.getElementsByClassName("slideshow__image");
+
+
+
 // スクロールでヘッダーを出し入れする
 const header = document.getElementById("header")
 let Yposition;
