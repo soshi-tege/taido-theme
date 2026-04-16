@@ -17,14 +17,10 @@ if (typeof (Storage) !== "undefined") {
 		preloader.style.display = "none";
 	} else {
 		sessionStorage.setItem("visited", true);
-		messages[0].style.animationDelay = "6s"
-		messages[1].style.animationDelay = "7s"
+		messages[0].style.animationDelay = "6s";
+		messages[1].style.animationDelay = "7s";
 	}
 }
-
-// フェイディングスライドショー
-const slideshowImages = document.getElementsByClassName("slideshow__image");
-
 
 
 // スクロールでヘッダーを出し入れする
