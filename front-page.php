@@ -34,7 +34,7 @@
 		if ( $video_id ) :
 			$video_src = wp_get_attachment_url( $video_id );
 			?>
-		<video id="top-animation" class="hero__video" autoplay muted loop playsinline>
+		<video id="top-animation" class="hero__video" autoplay loop muted playsinline>
 			<source src="<?php echo esc_url( $video_src ); ?>" type="video/mp4">
 			<div style="background: #000000;"></div>
 		</video>
