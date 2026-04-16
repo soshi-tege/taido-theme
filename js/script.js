@@ -36,3 +36,39 @@ window.addEventListener("scroll", function() {
 		header.classList.add("hidden");
 	}
 })
+
+// YouTube hero video: if autoplay fails, try again on user interaction.
+const heroIframe = document.querySelector(".hero__video");
+if (heroIframe && heroIframe.tagName === "IFRAME") {
+	try {
+		const src = heroIframe.getAttribute("src");
+		if (src) {
+			const url = new URL(src);
+			if (url.hostname.includes("youtube.com")) {
+				const origin = url.origin;
+				const win = heroIframe.contentWindow;
+				if (!win) {
+					return;
+				}
+
+				const sendPlay = function () {
+					win.postMessage(JSON.stringify({ event: "command", func: "mute", args: [] }), origin);
+					win.postMessage(JSON.stringify({ event: "command", func: "playVideo", args: [] }), origin);
+				};
+
+				heroIframe.addEventListener("load", sendPlay, { once: true });
+
+				const retryOnUserAction = function () {
+					sendPlay();
+					window.removeEventListener("touchstart", retryOnUserAction);
+					window.removeEventListener("click", retryOnUserAction);
+				};
+
+				window.addEventListener("touchstart", retryOnUserAction, { once: true });
+				window.addEventListener("click", retryOnUserAction, { once: true });
+			}
+		}
+	} catch (e) {
+		// Ignore invalid URLs or cross-origin restrictions.
+	}
+}
