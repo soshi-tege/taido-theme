@@ -30,14 +30,10 @@
 		</div>
 		<?php
 		// エディター上のカスタムフィールドから動画を取得.
-		$video_id = get_post_meta( get_the_ID(), 'top-video', true );
-		if ( $video_id ) :
-			$video_src = wp_get_attachment_url( $video_id );
+		$video_src = get_post_meta( get_the_ID(), 'top-video', true );
+		if ( $video_src ) :
 			?>
-		<video id="top-animation" class="hero__video" preload="metadata" autoplay loop muted playsinline webkit-playsinline>
-			<source src="<?php echo esc_url( $video_src ); ?>" type="video/mp4">
-			<div style="background: #000000;"></div>
-		</video>
+		<iframe class="hero__video" src="<?php echo esc_url( $video_src ) ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 			<?php
 			// 動画が見つからない際の予備.
 		else :
