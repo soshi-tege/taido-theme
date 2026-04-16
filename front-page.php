@@ -140,8 +140,10 @@
 				The Japanese Anime industry with decades of history needs fresh, international talent.<br>
 				We are working to connect overseas young talents with the industry for a more equitable, inclusive environment with open job opportunities and cultural interactions.
 			</p>
-			<div class="mission__slideshow">
-    			<img class="mission__image" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/mission.jpg" alt="">
+			<div class="mission__slideshow fade-slideshow">
+    			<img class="mission__image fade-slideshow__image" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/group.jpg" alt="African animators and TAIDO representatives">
+    			<img class="mission__image fade-slideshow__image" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/award.jpg" alt="African animator receiving an award from a Japanese company">
+    			<img class="mission__image fade-slideshow__image" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/speech.jpg" alt="African animator making a speech at TAIDO Animation Award 2026">
 			</div>
 			<a href="<?php echo esc_url( home_url( '/mission/' ) ); ?>" class="mission__button button">
 				Our Mission

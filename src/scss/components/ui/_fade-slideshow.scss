@@ -1,0 +1,33 @@
+$animation-duration-total: 12s;
+
+.fade-slideshow__image {
+    animation-name: slideshow;
+    animation-duration: $animation-duration-total;
+    animation-iteration-count: infinite;
+}
+
+.fade-slideshow__image:nth-of-type(2) {
+    animation-delay: calc($animation-duration-total / 3);
+}
+
+.fade-slideshow__image:nth-of-type(3) {
+    animation-delay: calc(2 * $animation-duration-total / 3);
+}
+
+@keyframes slideshow {
+    0% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    67% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
