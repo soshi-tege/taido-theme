@@ -13,7 +13,7 @@
 </head>
 <body <?php body_class(); ?>>
 	<?php get_template_part( 'includes/header' ); ?>
-	<section class="post">
+	<section class="post section">
 		<div class="post__inner inner">
 			<h1>
 				<?php the_title(); ?>

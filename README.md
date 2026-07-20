@@ -45,12 +45,6 @@ composer install
 npx gulp
 ```
 
-### 監視・自動リロード
-
-```bash
-npx gulp watch
-```
-
 ### コードチェック（Lint）
 
 ```bash

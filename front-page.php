@@ -18,13 +18,18 @@
 	<section class="hero">
 		<div class="hero__inner">
 			<div class="hero__message">
-				<p class="hero__message-text">
-					<span class="inline-block">You Have a Voice</span> <span class="inline-block">that Deserves Attention.</span><br>
+				<p class="hero__message-text typewriter-animation">
+					Dream, Wish, Create
 				</p>
 			</div>
 			<div class="hero__message">
-				<p class="hero__message-text hero__message-text--second">
-					<span class="inline-block">Make it Echo</span> <span class="inline-block">throughout the World Together.</span>
+				<p class="hero__message-text typewriter-animation">
+					Burst Out Your Imagination
+				</p>
+			</div>
+			<div class="hero__message">
+				<p class="hero__message-text typewriter-animation">
+					Together
 				</p>
 			</div>
 		</div>
@@ -47,18 +52,115 @@
 		endif;
 		?>
 	</section>
-	<?php
-	// If there is a new award coming up.
-	if ( get_the_content() ) :
-		get_template_part( 'includes/award' );
-		endif;
-	?>
+	<section class="projects section">
+        <div class="projects__inner inner">
+            <div class="projects__content">
+                <h2 class="projects__heading heading animate pop-up">
+                    Passion is All You Need 
+                </h2>
+                <p class="projects__paragraph">
+                    Our partners collaborated with experienced Japanese animators and anime studios to produce high-quality anime, delivering their traditions and history. They began their career as pioneers of African anime in Nigeria and Ghana. 
+                </p>
+                <!-- button-textの中身が実際は表示（aタグの中身は読み上げ用） -->
+                <a href="<?php echo esc_url( home_url( '/projects/' ) ); ?>" class="projects__button button">
+                    <span class="button__text" button-text="Our Projects">
+                        Our Projects
+                    </span>
+                </a>
+            </div>
+            <div class="projects__image-box fade-in animate">
+                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/images/home/projects.jpg" alt="Image of one of our partners at the TAIDO animation award 2026.">
+            </div>
+        </div>
+	</section>
+	<section class="mission section" style="background-image: url(<?php echo esc_url( get_template_directory_uri() ) ?>/images/home/mission.jpg);">
+        <div class="mission__inner inner">
+            <div class="mission__content">
+                <h2 class="mission__heading heading animate pop-up">
+                    Only you can Weave your Story
+                </h2>
+                <p class="mission__paragraph">
+                    The Japanese Anime industry with decades of history needs fresh, international talent.<br>
+                    We are working to connect overseas young talents with the industry for a more equitable, inclusive environment with open job opportunities and cultural interactions.
+                </p>
+                <a href="<?php echo esc_url( home_url( '/mission/' ) ); ?>" class="mission__button button">
+                    <span class="button__text" button-text="Our Mission">
+                        Our Mission
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="roadmap section">
+        <div class="roadmap__inner inner">
+            <div class="roadmap__sticky-box">
+                <div class="roadmap__sticky">
+                    <h2 class="roadmap__heading heading animate pop-up">
+                        Get Started Now
+                    </h2>
+                    <p class="roadmap__paragraph">
+                        In our mission to make anime creation open to everyone, we provide support across three stages: learning, creating, and getting recognition.
+                    </p>
+                </div>
+            </div>
+            <div class="roadmap__scroll">
+                <h3 class="roadmap__subheading animate pop-up">① <span class="roadmap__accent">Learn</span> Animation</h3>
+                <p class="roadmap__paragraph">
+                    Anime creation is not magic: it’s a result of collaboration across many animators who know the same ground of how anime should be created. A little flavor of creativity makes each animator unique: but everyone starts with practicing elementary shapes.<br><br>
+                    Our learning platform provides you with essential skills and toolkits of anime creation, which eventually helps your creativity shine.
+                </p>
+                <h3 class="roadmap__subheading animate pop-up">② <span class="roadmap__accent">Share</span> your animation with the world</h3>
+                <p class="roadmap__paragraph">
+                    Anime creation is not magic: it’s a result of collaboration across many animators who know the same ground of how anime should be created. A little flavor of creativity makes each animator unique: but everyone starts with practicing elementary shapes.<br><br>
+                    Our learning platform provides you with essential skills and toolkits of anime creation, which eventually helps your creativity shine.
+                </p>
+                <h3 class="roadmap__subheading animate pop-up">③ <span class="roadmap__accent">Connect</span> with your future partners</h3>
+                <p class="roadmap__paragraph">
+                    Anime creation is not magic: it’s a result of collaboration across many animators who know the same ground of how anime should be created. A little flavor of creativity makes each animator unique: but everyone starts with practicing elementary shapes.<br><br>
+                    Our learning platform provides you with essential skills and toolkits of anime creation, which eventually helps your creativity shine.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="voice section">
+        <div class="voice__inner inner">
+            <h2 class="voice__heading heading">
+                Meet the Community of African Anime Pioneers
+            </h2>
+            <ul class="voice__items">
+                <li class="voice__item">
+                    <video controls muted disablepictureinpicture playsinline loop src="https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574%2F699dc01b81404e1b1b6c8404_Gary%20Preview%20%281%29_mp4.mp4" poster="https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574/695eb28c1d29c860b6b38557_c76087770506d00f7039ff303b82505d_Seth%20Stop.avif" class="voice__video embedded-video">Message from our partner.</video>
+                    <p class="voice__person">
+                        <span class="voice__name">Name@Organization</span>
+                    </p>
+                </li>
+                <li class="voice__item">
+                    <video controls muted disablepictureinpicture playsinline loop src="https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574%2F699dc01b81404e1b1b6c8404_Gary%20Preview%20%281%29_mp4.mp4" poster="https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574/695eb28c1d29c860b6b38557_c76087770506d00f7039ff303b82505d_Seth%20Stop.avif" class="voice__video embedded-video">Message from our partner.</video>
+                    <p class="voice__person">
+                        <span class="voice__name">Name@Organization</span>
+                    </p>
+                </li>
+                <li class="voice__item">
+                    <video controls muted disablepictureinpicture playsinline loop src="https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574%2F699dc01b81404e1b1b6c8404_Gary%20Preview%20%281%29_mp4.mp4" poster="https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574/695eb28c1d29c860b6b38557_c76087770506d00f7039ff303b82505d_Seth%20Stop.avif" class="voice__video embedded-video">Message from our partner.</video>
+                    <p class="voice__person">
+                        <span class="voice__name">Name@Organization</span>
+                    </p>
+                </li>
+                <li class="voice__item">
+                    <video controls muted disablepictureinpicture playsinline loop src="https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574%2F699dc01b81404e1b1b6c8404_Gary%20Preview%20%281%29_mp4.mp4" poster="https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574/695eb28c1d29c860b6b38557_c76087770506d00f7039ff303b82505d_Seth%20Stop.avif" class="voice__video embedded-video">Message from our partner.</video>
+                    <p class="voice__person">
+                        <span class="voice__name">Name@Organization</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
 	<section class="works section">
 		<div class="works__inner inner">
 			<h2 class="works__heading heading">
-				Hope. Learn. And Become.
+				Discover what our precious partners have achieved
 			</h2>
-			<p class="works__paragraph paragraph">
+			<p class="works__paragraph">
 				We are looking for the young passion waiting to be discovered inside your heart.<br>
 				We do not expect any previous experience or knowledge. All you need is a passion.<br>
 				<br>
@@ -79,7 +181,7 @@
 				while ( $the_query->have_posts() ) :
 					$the_query->the_post();
 					?>
-					<li class="cards__item card">
+					<li class="cards__item card fade-in animate">
 						<a href="<?php echo esc_url( get_permalink() ); ?>">
 							<div class="card__content card__content--vertical">
 								<?php
@@ -126,28 +228,11 @@
 				?>
 			</ul>
 			<?php endif; ?>
-			<a href="<?php echo esc_url( home_url( '/category/work/' ) ); ?>" class="works__button button">
-				View All
-			</a>
-		</div>
-	</section>
-	<section class="mission section">
-		<div class="mission__inner inner">
-			<h2 class="mission__heading heading">
-				Discover African passions yet to be discovered
-			</h2>
-			<p class="mission__paragraph paragraph">
-				The Japanese Anime industry with decades of history needs fresh, international talent.<br>
-				We are working to connect overseas young talents with the industry for a more equitable, inclusive environment with open job opportunities and cultural interactions.
-			</p>
-			<div class="mission__slideshow fade-slideshow">
-    			<img class="mission__image fade-slideshow__image" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/group.jpg" alt="African animators and TAIDO representatives">
-    			<img class="mission__image fade-slideshow__image" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/award.jpg" alt="African animator receiving an award from a Japanese company">
-    			<img class="mission__image fade-slideshow__image" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/speech.jpg" alt="African animator making a speech at TAIDO Animation Award 2026">
-			</div>
-			<a href="<?php echo esc_url( home_url( '/mission/' ) ); ?>" class="mission__button button">
-				Our Mission
-			</a>
+            <a href="<?php echo esc_url( home_url( '/category/work/' ) ); ?>" class="works__button button">
+                <span class="button__text" button-text="View All">
+                    View All
+                </span>
+            </a>
 		</div>
 	</section>
 	<section class="news section">
@@ -165,48 +250,23 @@
 			$the_query = new WP_Query( $args );
 			if ( $the_query->have_posts() ) :
 				?>
-			<ul class="news__cards cards">
+			<ul class="news__items">
 				<?php
 				while ( $the_query->have_posts() ) :
 					$the_query->the_post();
 					?>
-				<li class="cards__item--half cards__item card">
+				<li class="news__item">
 					<a href="<?php echo esc_url( get_permalink() ); ?>">
-						<div class="card__content">
+						<div class="news__block">
 							<?php
-							$this_id = get_post_thumbnail_id();
-							$img     = wp_get_attachment_image_src( $this_id );
-							if ( $img ) {
-								$src = $img[0];
-							} else {
-								$src = get_template_directory_uri() . '/images/common/noimage.jpg';
-							}
-							?>
-							<img src="<?php echo esc_url( $src ); ?>" alt="#" class="card__img">
-							<div>
-								<?php
-								// カテゴリーを取得して表示（空の場合"Uncategorized"を表示）.
-								$categories = get_the_category();
-								if ( ! empty( $categories ) ) :
-									$category = $categories[0]->name;
-										else :
-											$category = 'Uncategorized';
-										endif;
-										// 長すぎるタイトルを短縮.
-										$the_title = get_the_title();
-										if ( mb_strlen( $the_title ) > 30 ) {
-											$the_title = mb_substr( $the_title, 0, 30 ) . '…';
-										}
-										// 長すぎる抜粋を短縮.
-										$excerpt = get_the_excerpt();
-										if ( mb_strlen( $excerpt ) > 60 ) {
-											$excerpt = mb_substr( $excerpt, 0, 60 ) . '…';
-										}
-										?>
-									<span class="card__category"><?php echo esc_html( $category ); ?></span>
-									<h3 class="card__heading"><?php echo esc_html( $the_title ); ?></h3>
-									<p class="card__excerpt"><?php echo esc_html( $excerpt ); ?></p>
-							</div>
+								// 長すぎるタイトルを短縮.
+								$the_title = get_the_title();
+								if ( mb_strlen( $the_title ) > 30 ) {
+									$the_title = mb_substr( $the_title, 0, 30 ) . '…';
+								}
+								?>
+								<time class="news__time"><?php echo get_the_date(); ?></time>
+								<h3 class="news__post-title"><?php echo esc_html( $the_title ); ?></h3>
 						</div>
 					</a>
 				</li>
@@ -216,76 +276,29 @@
 				?>
 			</ul>
 			<?php endif; ?>
-			<a href="<?php echo esc_url( home_url( '/category/news/' ) ); ?>" class="news__button button">
-				View All
-			</a>
-		</div>
-	</section>
-	<section class="partners section">
-		<div class="partners__inner inner">
-			<h2 class="partners__heading heading">Partners</h2>
-			<p class="partners__paragraph paragraph">
-				Our inclusive structure empowers companies and individuals to participate, tackling social challenges through collective action to make a meaningful impact on society.
-			</p>
-			<div class="logo-scroll">
-				<div class="logo-scroll__container">
-					<ul class="logo-scroll__group">
-					<!-- アニメーション用に同じロゴを2回表示 -->
-					<?php
-					for ( $i = 0; $i < 2; $i++ ) :
-						// 2回めのループではスクリーンリーダーから隠す.
-						$aria_hidden = ( 1 === $i ) ? 'true' : 'false';
-						// 全てのパートナーロゴをカスタムフィールドから配列として取得.
-						$partners = get_post_meta( get_the_ID(), 'partner', false );
-						// 全てのロゴを表示.
-						foreach ( $partners as $partner ) :
-							?>
-							<li class="logo-scroll__item" aria-hidden="<?php echo esc_attr( $aria_hidden ); ?>">
-								<img src="<?php echo esc_url( wp_get_attachment_url( $partner ) ); ?>" alt="Logo 2">
-							</li>
-							<?php
-						endforeach;
-					endfor;
-					?>
-					</ul>
-				</div>
-			</div>
+            <a href="<?php echo esc_url( home_url( '/category/news/' ) ); ?>" class="news__button button">
+                <span class="button__text" button-text="View All">
+                    View All
+                </span>
+            </a>
 		</div>
 	</section>
 	<section class="cta section">
 		<div class="cta__inner inner">
 			<h2 class="cta__heading heading">
-				Become Part of Our Inclusive Community
+				We Always Appreciate Your Voice
 			</h2>
-			<p class="cta__paragraph paragraph">
-				If you are a passionate youth with a burning passion, you can begin showing it to the world by:
+			<p class="cta__paragraph">
+			If you have any questions regarding our activities and community, don't hesitate to reach out to us.<br>
+			One small email can be the beginning of your big journey.
 			</p>
-			<ul>
-				<li>Joining our animation learning platform</li>
-				<li>Submitting your work to our animation award</li>
-			</ul>
-			<p>
-			If you wish to be part of our community that supports multicultural cooperation and inclusion, support us through partnership.
-			</p>
-			<div class="cta__buttons">
-				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="cta__button button">
-					Contact
-				</a>
-				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="cta__button button">
-					Learn
-				</a>
-				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="cta__button button">
-					News Letter
-				</a>
-			</div>
+            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="cta__button button">
+                <span class="button__text" button-text="Contact">
+                    Contact
+                </span>
+            </a>
 		</div>
 	</section>
-	<!-- If there is NO award coming up -->
-	<?php
-	if ( ! get_the_content() ) :
-		get_template_part( 'includes/award' );
-		endif;
-	?>
 	<?php get_footer(); ?>
 </body>
 </html>

@@ -35,7 +35,7 @@ if ( is_front_page() ) {
 					<a href="<?php echo esc_url( home_url( '/mission/' ) ); ?>">Mission</a>
 				</li>
 				<li class="nav-pc__item">
-					<a href="<?php echo esc_url( home_url( '/partner/' ) ); ?>">Partners</a>
+					<a href="<?php echo esc_url( home_url( '/projects/' ) ); ?>">Projects</a>
 				</li>
 				<li class="nav-pc__item">
 					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact</a>
@@ -62,7 +62,7 @@ if ( is_front_page() ) {
 					<a href="<?php echo esc_url( home_url( '/mission/' ) ); ?>">Mission</a>
 				</li>
 				<li class="nav-sp__item">
-					<a href="<?php echo esc_url( home_url( '/partner/' ) ); ?>">Partners</a>
+					<a href="<?php echo esc_url( home_url( '/projects/' ) ); ?>">Projects</a>
 				</li>
 				<li class="nav-sp__item">
 					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact</a>

@@ -1,16 +1,38 @@
 @use "base" as *;
 
 .heading {
-	margin-top: rem(48px);
-	margin-bottom: rem(48px);
-	color: $primary-color;
-	font-style: italic;
-	font-weight: bold;
-	font-size: rem(32px);
-	font-family: $headline-font;
-	@include mq("md") {
-	margin-top: rem(64px);
-	margin-bottom: rem(64px);
-		font-size: rem(48px);
-	}
+    position: relative;
+    display: inline-block;
+    color: $primary-color;
+    font-weight: bold;
+    font-size: rem(32px);
+    line-height: 1.2;
+    font-family: $headline-font;
+    transition: 0.3s;
+    @include mq("md") {
+        font-size: rem(48px);
+    }
+}
+
+.heading:hover {
+    text-shadow: 1px 1px $black, 1px -1px $black, -1px 1px $black, -1px -1px $black;
+}
+
+.heading::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: $primary-color;
+    left: 0;
+    bottom: -2px;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.heading:hover::after {
+    opacity: 1;
+    width: 100%;
+    transform: translateY(0);
 }

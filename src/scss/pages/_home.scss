@@ -1,155 +1,275 @@
-// ホームページのみに使用する設定
 @use "base" as *;
+// ホームページのみに使用する設定
 
 // アニメーションセクション
 .hero {
-	position: relative;
-	z-index: 20;
-	width: 100vw;
-	height: 100vh;
-	min-height: 60vw;
+    position: relative;
+    z-index: 20;
+    width: 100vw;
+    height: 100vh;
+    min-height: 60vw;
 }
 
 .hero__inner {
-	position: absolute;
-	overflow: hidden;
-	left: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 32px;
-	width: 100%;
-	max-width: rem(1340px);
-	height: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	padding-left: 20px;
-	padding-right: 20px;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+    max-width: rem(1340px);
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .hero__message {
-	width: 100%;
-	overflow: hidden;
-}
-
-.hero__message:nth-of-type(2) {
-	margin-left: auto;
-	width: 100%;
-
-	@include mq("md") {
-		width: 90%;
-	}
-}
-
-.hero__message-text {
-	margin: 0;
-	color: #ffee00;
-	font-size: rem(60px);
-	line-height: 1.2;
-	font-weight: bold;
-	font-family: $headline-font;
-	text-shadow: 10px 10px 10px #000000;
-	-webkit-text-stroke: 3px #000000;
-	transform: translateY(100%);
-	animation-duration: 0.8s;
-	animation-delay: 0.5s;
-	animation-name: popup;
-	animation-fill-mode: forwards;
-	animation-iteration-count: 1;
-
-	@include mq("md") {
-		font-size: rem(80px);
-	}
-}
-
-.hero__message-text--second {
-	animation-delay: 1.5s;
-}
-
-@keyframes popup {
-	100% {
-		transform: translateY(0%);
-	}
-}
-
-.hero__video {
-	width: 100vw;
-	height: 100vh;
-	min-height: 60vw;
-	object-fit: cover;
-}
-
-.works__cards {
-	margin-top: rem(32px);
-	margin-bottom: rem(32px);
-
-	@include mq("md") {
-		margin-top: rem(64px);
-		margin-bottom: rem(64px);
-	}
-}
-
-.works__button {
-	display: table;
-	margin-top: rem(32px);
-	margin-bottom: rem(32px);
-	margin-left: auto;
-	margin-right: auto;
-
-	@include mq("md") {
-		margin-top: rem(64px);
-		margin-bottom: rem(64px);
-	}
-}
-
-.mission__button {
-	display: table;
-	margin-top: rem(32px);
-	margin-bottom: rem(32px);
-	margin-left: auto;
-	margin-right: auto;
-
-	@include mq("md") {
-		margin-top: rem(64px);
-		margin-bottom: rem(64px);
-	}
-}
-
-.mission__slideshow {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: rem(800px);
-    aspect-ratio: 16/9;
+    width: 100%;
     overflow: hidden;
 }
 
-.mission__image {
+.hero__message-text {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    color: $white;
+    font-size: rem(60px);
+    line-height: 1.2;
+    font-weight: bold;
+    text-shadow: 10px 10px 10px #000000;
+    -webkit-text-stroke: 3px #000000;
+
+    @include mq("md") {
+        font-size: rem(80px);
+    }
+}
+
+.hero__message:nth-of-type(2) .hero__message-text {
+    animation-delay: 1.5s;
+}
+
+.hero__message:nth-of-type(3) .hero__message-text {
+    animation-delay: 3.5s;
+    color: #ffee00;
+    font-family: $headline-font;
+    font-style: italic;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.hero__video {
+    width: 100vw;
+    height: 100vh;
+    min-height: 60vw;
+    object-fit: cover;
+}
+
+.projects__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects__content {
+    width: 50%;
+}
+
+.projects__heading {
+    margin: 0;
+}
+
+.projects__image-box {
+    position: relative;
+    width: 48%;
+}
+
+.projects__image-box::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-	margin: 0;
-	width: 100%;
-	height: 100%;
+    display: block;
+    background-image: linear-gradient(to left, rgba($white, 0) 0%, rgba($white, 1) 100%);
+    width: 30%;
+    height: 100%;
+}
+
+.projects__button {
+    margin-top: 4rem;
+}
+
+.mission {
+    width: 100%;
+    height: 52.4vw;
+    background-size: contain;
+}
+
+.mission__content {
+    padding: $padding-sp;
+    background-color: rgba($black, 0.5);
+    border-radius: 30px;
+
+    @include mq("md") {
+        padding: $padding-pc;
+        width: 720px;
+    }
+}
+
+.mission__wrapper {
+    width: 100%;
+    padding: $padding-sp;
+    margin-left: auto;
+
+    @include mq("md") {
+        padding: $padding-pc;
+    }
+}
+
+.mission__heading {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: rem(42px);
+}
+
+.mission__paragraph {
+    color: $white;
+}
+
+.mission__button {
+    margin-top: 4rem;
+}
+
+.roadmap__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.roadmap__sticky-box {
+    width: 40%;
+}
+
+.roadmap__sticky {
+    position: sticky;
+    top: rem(150px);
+}
+
+.roadmap__scroll {
+    width: 55%;
+}
+
+.roadmap__heading {
+    margin: 0;
+}
+
+.roadmap__subheading {
+    font-size: rem(32px);
+}
+
+.roadmap__accent {
+    display: inline-block;
+    font-family: $headline-font;
+    font-style: italic;
+    font-weight: 900;
+    padding-right: rem(4px);
+}
+
+.voice__items {
+    display: flex;
+    justify-content: flex-start;
+    gap: rem(24px);
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.voice__item {
+    max-width: rem(300px);
+}
+
+.works__cards {
+    margin-top: rem(48px);
+
+    @include mq("md") {
+        margin-top: rem(80px);
+    }
+}
+
+.works__button {
+    display: table;
+    margin-top: rem(16px);
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq("md") {
+        margin-top: rem(32px);
+    }
+}
+
+.news__items {
+    list-style-type: none;
+    color: $black;
+    padding: 0;
+    width: 65%;
+
+    a {
+        text-decoration: none;
+        color: $black;
+    }
+}
+
+.news__item {
+    padding-left: 3px;
+    border-bottom: 1px solid $black;
+}
+
+.news__item~.news__item {
+    margin-top: rem(24px);
+}
+
+.news__block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(24px);
+    font-size: rem(16px);
+    transition: 0.3s;
+}
+
+.news__block:hover {
+    transform: scale(1.01);
+}
+
+.news__post-title {
+    margin: 0;
+}
+
+.news__post-title,
+.news__time {
+    // news__blockから継承（フォントサイズを統一）
+    font-size: inherit;
 }
 
 .news__button {
-	display: table;
-	margin-top: rem(32px);
-	margin-bottom: rem(32px);
-	margin-left: auto;
-	margin-right: auto;
+    display: table;
+    margin-top: rem(16px);
+    margin-left: auto;
+    margin-right: auto;
 
-	@include mq("md") {
-		margin-top: rem(64px);
-		margin-bottom: rem(64px);
-	}
+    @include mq("md") {
+        margin-top: rem(32px);
+    }
 }
 
-.cta__buttons {
-	display: flex;
-	justify-content: center;
-	gap: rem(24px);
-	margin-top: rem(64px);
-	margin-bottom: rem(64px);
+.cta__heading {
+    margin-bottom: 0;
+}
+
+.cta__paragraph {
+    margin-top: rem(24px);
+}
+
+.cta__button {
+    margin-top: rem(72px);
 }

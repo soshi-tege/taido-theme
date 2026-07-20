@@ -1,81 +1,90 @@
 @use "base" as *;
 
 .header {
-	width: 100%;
-	padding: 10px 0;
-	background-color: #ffffff;
-	border-bottom: 1px solid black;
-	z-index: 1;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid black;
+    z-index: 1;
 }
 
 .header a {
-	text-decoration: none;
-	color: $white;
+    text-decoration: none;
+    color: $white;
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
 
-	@include mq("md") {
-		color: $black;
-	}
+    @include mq("md") {
+        color: $black;
+    }
 }
 
+.header a:hover {
+    text-decoration-color: inherit;
+}
+
+
 .header__inner {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__nav-pc {
-	margin-left: auto;
+    margin-left: auto;
 }
 
 .header__logo {
-	max-width: rem(158px);
+    max-width: rem(158px);
 }
 
 .header__drawer {
-	position: relative;
-	z-index: 100;
-	width: rem(20px);
-	height: rem(20px);
-	appearance: none;
-	background: transparent;
-	border: none;
-	outline: none;
+    position: relative;
+    z-index: 100;
+    width: rem(20px);
+    height: rem(20px);
+    appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
 }
 
 .header__drawer span {
-	position: absolute;
-	left: 0;
-	width: inherit;
-	height: rem(2px);
-	background-color: $black;
-	transition: 0.3s;
+    position: absolute;
+    left: 0;
+    width: inherit;
+    height: rem(2px);
+    background-color: $black;
+    transition: 0.3s;
 }
 
 .header__drawer span:nth-child(1) {
-	top: 0;
+    top: 0;
 }
 
 .header__drawer span:nth-child(2) {
-	top: 50%;
-	transform: translateY(-50%);
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .header__drawer span:nth-child(3) {
-	bottom: 0;
+    bottom: 0;
 }
 
 .header__drawer.is-active span:nth-child(1) {
-	// (hamburgerの高さ - spanの高さ) / 2
-	top: rem(9px);
-	transform: rotate(45deg);
+    // (hamburgerの高さ - spanの高さ) / 2
+    top: rem(9px);
+    transform: rotate(45deg);
 }
 
 .header__drawer.is-active span:nth-child(2) {
-	opacity: 0;
+    opacity: 0;
 }
 
 .header__drawer.is-active span:nth-child(3) {
-	// (hamburgerの高さ - spanの高さ) / 2
-	bottom: rem(9px);
-	transform: rotate(-45deg);
+    // (hamburgerの高さ - spanの高さ) / 2
+    bottom: rem(9px);
+    transform: rotate(-45deg);
 }

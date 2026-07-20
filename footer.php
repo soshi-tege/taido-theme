@@ -38,23 +38,13 @@
 				</a>
 				</li>
 				<li class="footer__item">
-				<a href="<?php echo esc_url( home_url( '/partners/' ) ); ?>">
-					Partners
+				<a href="<?php echo esc_url( home_url( '/projects/' ) ); ?>">
+					Projects
 				</a>
 				</li>
 				<li class="footer__item">
 				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 					Contact
-				</a>
-				</li>
-				<li class="footer__item">
-				<a href="<?php echo esc_url( home_url( '/newsletter/' ) ); ?>">
-					Newsletters
-				</a>
-				</li>
-				<li class="footer__item">
-				<a href="<?php echo esc_url( home_url( '/learn/' ) ); ?>">
-					Learn
 				</a>
 				</li>
 			</ul>

@@ -1,0 +1,21 @@
+@use "base" as *;
+
+.typewriter-animation {
+    animation-name: typewriter;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}

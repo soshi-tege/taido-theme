@@ -1,15 +1,54 @@
 @use "base" as *;
 
 .button {
-	display: table;
-	padding: rem(12px) rem(24px);
-	color: #ffffff;
-	background-color: $primary-color;
-	text-decoration: none;
-	transition: 0.3s;
-	font-family: $accent-font;
+    display: table;
+    padding: rem(12px) rem(24px);
+    min-width: rem(160px);
+    background-color: $secondary-color;
+    text-decoration: none;
+    transition: 0.3s;
+    text-align: center;
+    font-size: rem(20px);
+    border: 1px solid $black;
+    border-radius: rem(15px);
 }
 
 .button:hover {
-	filter: brightness(1.2);
+    background-color: $accent-color;
+    filter: brightness(1.2);
+}
+
+
+.button__text {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.button__text::before,
+.button__text::after {
+    content: attr(button-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.button__text::before {
+    color: $white;
+}
+
+.button__text::after {
+    color: $black;
+    transform: translateY(100%);
+}
+
+.button:hover .button__text::before {
+    transform: translateY(-100%);
+}
+
+.button:hover .button__text::after {
+    transform: translateY(0);
 }

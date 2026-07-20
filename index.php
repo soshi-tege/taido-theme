@@ -14,9 +14,17 @@
 <body <?php body_class(); ?>>
 	<?php get_template_part( 'includes/header' ); ?>
 	<section class="posts-page section">
-		<div class="posts__inner inner">
-			<h2 class="heading">
-				Posts
+		<div class="posts-page__inner inner">
+			<h2 class="posts-page__heading heading">
+				<?php
+				if ( is_category() ) :
+				$categories = get_the_category();
+				$category_name = $categories[0]->cat_name;
+				echo $category_name;
+                else:
+                echo "Posts";
+                endif;
+				?>
 			</h2>
 			<?php
 			// 最新の投稿を全て取得する.
