@@ -26,7 +26,7 @@ if (typeof (Storage) !== "undefined") {
 const topAnimation = document.getElementById("top-animation");
 topAnimation.addEventListener("playing", () => {
     alert("vid playing")
-})
+}, { once: true })
 
 // スクロールでヘッダーを出し入れする
 const header = document.getElementById("header");
