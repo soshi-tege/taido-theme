@@ -28,6 +28,8 @@ try {
     topAnimation.play();
 } catch {
     topAnimation.classList.add("hidden");
+    console.log("vid hidden");
+    
 }
 
 // スクロールでヘッダーを出し入れする
