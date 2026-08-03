@@ -61,15 +61,17 @@ const options = {
 };
 
 const callback = (entries, observer) => {
-    entries.forEach(entry => {
+    for (const entry of entries) {
         if (entry.isIntersecting && !entry.target.classList.contains("animated")) {
             entry.target.classList.add("animated");
         }
-    })
+    }
 }
 
 const observer = new IntersectionObserver(callback, options);
 
 const animatedElements = document.querySelectorAll(".animate");
 
-animatedElements.forEach(element => observer.observe(element));
+for (const element of animatedElements) {
+    observer.observe(element);
+}

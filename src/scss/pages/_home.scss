@@ -54,7 +54,7 @@
 
 .hero__message:nth-of-type(3) .hero__message-text {
     animation-delay: 3.5s;
-    color: #ffee00;
+    color: $yellow;
     font-family: $headline-font;
     font-style: italic;
     font-weight: 900;
@@ -68,22 +68,76 @@
     object-fit: cover;
 }
 
-.projects__inner {
-    display: flex;
-    justify-content: space-between;
+.projects {
+    position: relative;
+    margin-bottom: 0;
+    padding-top: 55%;
+    padding-bottom: rem(20px);
+    aspect-ratio: 3/4;
+    background-image: url("../images/home/projects-sp.jpg");
+    background-size: cover;
+
+    @include mq("md") {
+        padding-top: 0;
+        padding-bottom: 0;
+        aspect-ratio: auto;
+        background-image: none;
+    }
+
+    // マスクより上に表示
+    >* {
+        position: relative;
+        z-index: 10;
+    }
+
 }
 
 .projects__content {
-    width: 50%;
+    @include mq("md") {
+        width: 58%;
+    }
+
+}
+
+// 背景画像の上から被せるマスク
+.projects::before {
+    content: "";
+    position: absolute;
+    // 他の要素より下に表示（背景画像の上にのみ被せる）
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.5);
+
+    @include mq("md") {
+        display: none;
+    }
+}
+
+.projects__inner {
+    display: flex;
+    justify-content: space-between;
 }
 
 .projects__heading {
     margin: 0;
 }
 
+.projects__paragraph {
+    // <768pxでは黒色のマスクに合わせて白を使用
+    color: $white;
+
+    @include mq("md") {
+        // デスクトップでは親要素の色をそのまま（専用の色を指定しない）
+        color: inherit;
+    }
+}
+
 .projects__image-box {
     position: relative;
-    width: 48%;
+    width: 40%;
 }
 
 .projects__image-box::after {
@@ -102,9 +156,17 @@
 }
 
 .mission {
+    margin-top: 0;
+    padding-top: rem(24px);
+    padding-bottom: rem(320px);
     width: 100%;
-    height: 52.4vw;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
+
+    @include mq("md") {
+        padding-top: rem(32px);
+        padding-bottom: rem(400px);
+    }
 }
 
 .mission__content {
@@ -139,16 +201,31 @@
 }
 
 .mission__button {
-    margin-top: 4rem;
+    
+    margin-top: rem(16px);
+}
+
+.roadmap {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: rem(64px);
+    padding-bottom: rem(160px);
+    background-image: url("../images/home/shooting-stars.gif");
+    background-size: cover;
+    color: $white;
 }
 
 .roadmap__inner {
-    display: flex;
-    justify-content: space-between;
+    @include mq("md") {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .roadmap__sticky-box {
-    width: 40%;
+    @include mq("md") {
+        width: 40%;
+    }
 }
 
 .roadmap__sticky {
@@ -157,7 +234,9 @@
 }
 
 .roadmap__scroll {
-    width: 55%;
+    @include mq("md") {
+        width: 55%;
+    }
 }
 
 .roadmap__heading {
@@ -166,6 +245,7 @@
 
 .roadmap__subheading {
     font-size: rem(32px);
+    color: $yellow;
 }
 
 .roadmap__accent {
@@ -178,10 +258,15 @@
 
 .voice__items {
     display: flex;
+    overflow-x: scroll;
     justify-content: flex-start;
-    gap: rem(24px);
+    gap: rem(8px);
     padding-left: 0;
     list-style-type: none;
+
+    @include mq("md") {
+        gap: rem(24px);
+    }
 }
 
 .voice__item {
@@ -208,10 +293,11 @@
 }
 
 .news__items {
+    // 子要素のサイズに応じてリサイズ
+    display: table;
+    padding: 0;
     list-style-type: none;
     color: $black;
-    padding: 0;
-    width: 65%;
 
     a {
         text-decoration: none;
@@ -220,18 +306,15 @@
 }
 
 .news__item {
-    padding-left: 3px;
+    padding-top: rem(16px);
+    padding-bottom: rem(8px);
+    padding-left: rem(8px);
     border-bottom: 1px solid $black;
-}
-
-.news__item~.news__item {
-    margin-top: rem(24px);
 }
 
 .news__block {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: top;
     gap: rem(24px);
     font-size: rem(16px);
     transition: 0.3s;
@@ -241,8 +324,15 @@
     transform: scale(1.01);
 }
 
+.news__time {
+    // タイトルのみ改行する（日付は改行しない）.
+    flex-shrink: 0;
+}
+
 .news__post-title {
     margin: 0;
+    // タイトルのみ改行する（日付は改行しない）.
+    flex-shrink: 1;
 }
 
 .news__post-title,

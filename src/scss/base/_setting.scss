@@ -19,9 +19,18 @@ $base-font: "Lato", "Arial", sans-serif; // デフォルト
 $headline-font: "Texturina", serif; // タイトルなど
 
 body {
+    // ベースカラーとフォント
     font-family: $base-font;
     line-height: 1.5;
     color: #1E1D29;
+    // 最低でも100vh
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    >main {
+        flex-grow: 1;
+    }
 }
 
 // 共通の色
@@ -29,6 +38,7 @@ $black: #1E1D29;
 $primary-color: #E37819; // テーマカラー
 $secondary-color: #55A605; // 二次メインカラー
 $accent-color: #6090F0; // アクセントカラー
+$yellow: #FFC868;
 $white: #ffffff;
 
 
