@@ -201,7 +201,7 @@
 }
 
 .mission__button {
-    
+
     margin-top: rem(16px);
 }
 
@@ -293,9 +293,8 @@
 }
 
 .news__items {
-    // 子要素のサイズに応じてリサイズ
-    display: table;
     padding: 0;
+    max-width: 840px;
     list-style-type: none;
     color: $black;
 
