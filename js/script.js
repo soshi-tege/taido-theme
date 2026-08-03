@@ -24,14 +24,9 @@ if (typeof (Storage) !== "undefined") {
 
 // トップ画像を自動再生（videoタグのautoplayが動かない場合の予備）
 const topAnimation = document.getElementById("top-animation");
-try {
-    topAnimation.play();
-    alert("vid not hidden");
-} catch {
-    topAnimation.classList.add("hidden");
-    alert("vid hidden");
-    
-}
+topAnimation.addEventListener("playing", () => {
+    console.log("vid playing")
+})
 
 // スクロールでヘッダーを出し入れする
 const header = document.getElementById("header");
