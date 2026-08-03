@@ -25,7 +25,7 @@ if (typeof (Storage) !== "undefined") {
 // トップ画像を自動再生（videoタグのautoplayが動かない場合の予備）
 const topAnimation = document.getElementById("top-animation");
 topAnimation.addEventListener("playing", () => {
-    console.log("vid playing")
+    alert("vid playing")
 })
 
 // スクロールでヘッダーを出し入れする
