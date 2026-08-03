@@ -23,16 +23,20 @@ if (typeof (Storage) !== "undefined") {
 }
 
 // トップ画像を自動再生（videoタグのautoplayが動かない場合の予備）
-let videoFailed = true;
 const topAnimation = document.getElementById("top-animation");
-topAnimation.play();
-topAnimation.addEventListener("playing", () => {
-    alert("vid playing")
-    videoFailed = false;
+let videoStarted = false;
+topAnimation.addEventListener("playing", async () => {
+    videoStarted = true;
 }, { once: true })
-if (videoFailed) {
-    topAnimation.classList.add("hidden");
-}
+
+topAnimation.play();
+
+setTimeout(() => {
+    if (! videoStarted) {
+        topAnimation.classList.add("hidden");
+    }
+}, 1000);
+
 
 // スクロールでヘッダーを出し入れする
 const header = document.getElementById("header");
