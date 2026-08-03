@@ -22,6 +22,10 @@ if (typeof (Storage) !== "undefined") {
     }
 }
 
+// トップ画像を自動再生（videoタグのautoplayが動かない場合の予備）
+const topImage = document.getElementById("top-animation");
+topImage.play().catch(console.error);
+
 
 // スクロールでヘッダーを出し入れする
 const header = document.getElementById("header");
