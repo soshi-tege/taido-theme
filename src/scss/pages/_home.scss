@@ -37,14 +37,23 @@
     justify-content: flex-start;
     margin: 0;
     color: $white;
-    font-size: rem(60px);
+    font-size: rem(40px);
     line-height: 1.2;
     font-weight: bold;
     text-shadow: 10px 10px 10px #000000;
-    -webkit-text-stroke: 3px #000000;
+    -webkit-text-stroke: 2px #000000;
 
-    @include mq("md") {
+    @include mq ("sm") {
+        font-size: rem(60px);
+    }
+
+    // @include mq("md") {
+    //     font-size: rem(60px);
+    // }
+
+    @include mq("lg") {
         font-size: rem(80px);
+        -webkit-text-stroke: 3px #000000;
     }
 }
 
@@ -361,6 +370,14 @@
     margin-top: rem(24px);
 }
 
+.cta__subheading {
+    font-size: rem(32px);
+}
+
+.cta__h4 {
+    font-size: rem(24px);
+}
+
 .cta__button {
-    margin-top: rem(72px);
+    margin-top: rem(24px);
 }

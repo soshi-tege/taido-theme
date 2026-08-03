@@ -34,11 +34,11 @@ topAnimation.play();
 
 // if the top animation is paused after a second, display an image instead
 setTimeout(() => {
-    if (! videoStarted) {
+    if (!videoStarted) {
         topAnimation.classList.add("hidden");
         topImage.classList.remove("hidden");
     }
-}, 1000);
+}, 100);
 
 
 // スクロールでヘッダーを出し入れする
@@ -93,3 +93,4 @@ const animatedElements = document.querySelectorAll(".animate");
 for (const element of animatedElements) {
     observer.observe(element);
 }
+

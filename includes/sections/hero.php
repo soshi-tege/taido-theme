@@ -7,7 +7,7 @@
 		</div>
 		<div class="hero__message">
 			<p class="hero__message-text typewriter-animation">
-				Burst Out Your Imagination
+				Burst Out<br class="mobile"> Your Imagination
 			</p>
 		</div>
 		<div class="hero__message">
@@ -20,7 +20,7 @@
 		<source src="<?php echo esc_url( get_template_directory_uri() ); ?>/videos/webm/top-video.webm" type="video/webm">
 		<source src="<?php echo esc_url( get_template_directory_uri() ); ?>/videos/mp4/top-video.mp4" type="video/mp4">
 		<!-- Videoタグがサポートされていない場合 -->
-		<div style="background: #000000;"></div>
+		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/top-video-fallback.jpg">
 	</video>
 	<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/top-video-fallback.jpg" id="top-animation-fallback" class="hero__video hidden">
 </section>
