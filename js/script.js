@@ -23,16 +23,12 @@ if (typeof (Storage) !== "undefined") {
 }
 
 // トップ画像を自動再生（videoタグのautoplayが動かない場合の予備）
-const topImage = document.getElementById("top-animation");
-topImage.play();
-topImage.addEventListener("click", async () => {
-    try {
-        await video.play();
-    } catch (err) {
-        console.error(err);
-    }
-})
-
+const topAnimation = document.getElementById("top-animation");
+try {
+    topAnimation.play();
+} catch {
+    topAnimation.classList.add("hidden");
+}
 
 // スクロールでヘッダーを出し入れする
 const header = document.getElementById("header");
