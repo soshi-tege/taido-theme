@@ -38,7 +38,7 @@ setTimeout(() => {
         topAnimation.classList.add("hidden");
         topImage.classList.remove("hidden");
     }
-}, 100);
+}, 1000);
 
 
 // スクロールでヘッダーを出し入れする
