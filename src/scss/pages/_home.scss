@@ -224,6 +224,10 @@
     background-image: url("../images/home/shooting-stars.gif");
     background-size: cover;
     color: $white;
+
+    @include mq("md") {
+        margin-top: rem(120px);
+    }
 }
 
 .roadmap__inner {
