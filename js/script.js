@@ -24,7 +24,7 @@ if (typeof (Storage) !== "undefined") {
 
 // トップ画像を自動再生（videoタグのautoplayが動かない場合の予備）
 const topAnimation = document.getElementById("top-animation");
-const topImage = document.getElementById("top-animation");
+const topImage = document.getElementById("top-animation-fallback");
 let videoStarted = false;
 topAnimation.addEventListener("playing", async () => {
     videoStarted = true;
