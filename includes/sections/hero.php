@@ -22,4 +22,5 @@
 		<!-- Videoタグがサポートされていない場合 -->
 		<div style="background: #000000;"></div>
 	</video>
+	<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/top-video-fallback.jpg" id="top-animation-fallback" class="hero__video hidden">
 </section>

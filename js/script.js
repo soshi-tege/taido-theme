@@ -24,6 +24,7 @@ if (typeof (Storage) !== "undefined") {
 
 // トップ画像を自動再生（videoタグのautoplayが動かない場合の予備）
 const topAnimation = document.getElementById("top-animation");
+const topImage = document.getElementById("top-animation");
 let videoStarted = false;
 topAnimation.addEventListener("playing", async () => {
     videoStarted = true;
@@ -31,9 +32,11 @@ topAnimation.addEventListener("playing", async () => {
 
 topAnimation.play();
 
+// if the top animation is paused after a second, display an image instead
 setTimeout(() => {
     if (! videoStarted) {
         topAnimation.classList.add("hidden");
+        topImage.classList.remove("hidden");
     }
 }, 1000);
 
