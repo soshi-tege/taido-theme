@@ -26,10 +26,10 @@ if (typeof (Storage) !== "undefined") {
 const topAnimation = document.getElementById("top-animation");
 try {
     topAnimation.play();
-    console.log("vid not hidden");
+    alert("vid not hidden");
 } catch {
     topAnimation.classList.add("hidden");
-    console.log("vid hidden");
+    alert("vid hidden");
     
 }
 
