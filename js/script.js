@@ -25,14 +25,32 @@ if (typeof (Storage) !== "undefined") {
 // トップ動画を自動再生（videoタグのautoplayが動かない場合のバックアップ）
 const topVideo = document.getElementById("top-animation");
 const topImage = document.getElementById("top-animation-fallback");
-topVideo.addEventListener('suspend', () => {
-    console.log("In low power mode");
-});
-topAnimation.addEventListener("playing", async () => {
-    console.log("Not in low power mode");
-}, { once: true })
+let promise = topVideo.play();
+if (promise !== undefined) {
+    promise
+        .catch(error => {
+            // Auto-play was prevented
+            // Show a UI element to let the user manually start playback
+            if (error.name === "NotAllowedError") {
+                console.log("Low Power Mode Active");
+                topVideo.remove();
+                topImage.style.display = "block";
+            }
 
-topAnimation.play();
+        })
+        .then(() => {
+            // if there is no error, then we play the video
+            topVideo.play();
+        });
+}
+
+// topVideo.addEventListener('suspend', () => {
+//     console.log("In low power mode");
+// });
+// topAnimation.addEventListener("playing", async () => {
+//     console.log("Not in low power mode");
+// }, { once: true })
+
 
 // if the top animation is paused after a second, display an image instead
 setTimeout(() => {
