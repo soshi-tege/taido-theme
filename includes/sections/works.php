@@ -19,10 +19,10 @@
 			See what our previous learners have created and be one of them.
 		</p>
 		<?php
-		// カテゴリー「work」の最新の投稿を３つ取得する.
+		// カテゴリー「works」の最新の投稿を３つ取得する.
 		$args      = array(
 			'post_type'      => 'post',
-			'category_name'  => 'work',
+			'category_name'  => 'works',
 			'posts_per_page' => 3,
 		);
 		$the_query = new WP_Query( $args );
@@ -55,21 +55,25 @@
 									$category = $categories[0]->name;
 										else :
 											$category = 'Uncategorized';
-										endif;
-										// 長すぎるタイトルを短縮.
-										$the_title = get_the_title();
-										if ( mb_strlen( $the_title ) > 30 ) {
-											$the_title = mb_substr( $the_title, 0, 30 ) . '…';
-										}
-										// 長すぎる抜粋を短縮.
-										$excerpt = get_the_excerpt();
-										if ( mb_strlen( $excerpt ) > 60 ) {
-											$excerpt = mb_substr( $excerpt, 0, 60 ) . '…';
-										}
 										?>
 								<span class="card__category"><?php echo esc_html( $category ); ?></span>
-								<h3 class="card__heading"><?php echo esc_html( $the_title ); ?></h3>
+								<?php endif; ?>
+								<?php
+                                    $title = get_the_title();
+                                    if ( $title ):
+    								// タイトルを30字以内にしHTMLを省略する.
+    								$title = sanitize_and_truncate_text( $title );
+    								?>
+								<h3 class="card__heading"><?php echo esc_html( $title ); ?></h3>
+								<?php endif; ?>
+								<?php
+    								// 長すぎる抜粋を短縮.
+    								$excerpt = get_the_excerpt();
+    								if ( $excerpt ):
+    								$excerpt = sanitize_and_truncate_text( $excerpt, 90 );
+    								?>
 								<p class="card__excerpt"><?php echo esc_html( $excerpt ); ?></p>
+								<?php endif; ?>
 							</div>
 						</div>
 					</a>
@@ -80,7 +84,7 @@
 			?>
 		</ul>
 		<?php endif; ?>
-        <a href="<?php echo esc_url( home_url( '/category/work/' ) ); ?>" class="works__button button">
+        <a href="<?php echo esc_url( home_url( '/category/works/' ) ); ?>" class="works__button button">
             <span class="button__text" button-text="View All">
                 View All
             </span>

@@ -15,3 +15,4 @@
 </head>
 <body>
 <?php get_template_part( 'includes/layout/header' ); ?>
+<main>

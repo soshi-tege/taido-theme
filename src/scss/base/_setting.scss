@@ -27,6 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    word-break: break-word;
 
     >main {
         flex-grow: 1;
@@ -109,4 +110,10 @@ $mediaquerys: (
 // inline-blockに指定（改行位置の指定等に使える）
 .inline-block {
     display: inline-block;
+}
+
+// 画像のfloatの「ネスト」を防止
+// GutenbergのAlignオプションはfloatを使用するため、画像ごとに一度リセットする
+.wp-block-image {
+    clear: both;
 }

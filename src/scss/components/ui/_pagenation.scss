@@ -5,6 +5,7 @@
 	margin-top: 10%;
 	text-align: center;
 	line-height: 3;
+	clear: both;
 	@include mq("md") {
 		margin-top: 6%;
 	}
@@ -24,7 +25,7 @@
 	text-align: center;
 	line-height: 1;
 	@include mq("md") {
-		padding: rem(7px) 0 (13px);
+		padding: rem(9px) 0 (11px);
 		width: rem(42px);
 		font-size: rem(20px);
 	}

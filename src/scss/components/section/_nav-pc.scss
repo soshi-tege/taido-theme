@@ -1,7 +1,9 @@
-.nav-pc__items { 
-	display: flex;
+@use "base" as *;
+
+.nav-pc__items {
+    display: flex;
 }
 
-.nav-pc__item ~ .nav-pc__item {
-	margin-left: 32px;
+.nav-pc__item~.nav-pc__item {
+    margin-left: rem(24px);
 }

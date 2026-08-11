@@ -18,7 +18,12 @@
     			</a>
     			</li>
     			<li class="footer__item">
-    			<a href="<?php echo esc_url( home_url( '/category/work/' ) ); ?>">
+    			<a href="<?php echo esc_url( home_url( '/posts/' ) ); ?>">
+    				Posts
+    			</a>
+    			</li>
+    			<li class="footer__item">
+    			<a href="<?php echo esc_url( home_url( '/category/works/' ) ); ?>">
     				Works
     			</a>
     			</li>

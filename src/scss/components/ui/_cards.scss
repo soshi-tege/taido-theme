@@ -1,24 +1,26 @@
 @use "base" as *;
 
-.cards {
-	gap: rem(24px);
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	list-style-type: none;
+$gap: rem(32px);
 
-	@include mq("md") {
-		flex-direction: row;
-	}
+.cards {
+    gap: $gap;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style-type: none;
+
+    @include mq("md") {
+        flex-direction: row;
+    }
 }
 
 .cards__item {
-	max-width: rem(480px);
+    max-width: rem(480px);
 
-	@include mq("md") {
-		width: calc((100% - rem(64px)) / 3);
-		min-width: rem(320px);
-	}
+    @include mq("md") {
+        width: calc((100% - $gap*2) / 3);
+        min-width: rem(320px);
+    }
 }

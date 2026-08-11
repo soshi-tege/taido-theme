@@ -31,6 +31,10 @@ function add_slug( $classes ) {
 add_filter( 'body_class', 'add_slug' );
 
 
+// アーカイブページの接頭辞（例：Category: Example）を削除
+add_filter('get_the_archive_title_prefix','__return_empty_string');
+
+
 /**
  * CSSとJSの読み込み
  *
@@ -68,3 +72,26 @@ function theme_script_init() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'theme_script_init' );
+
+
+/**
+ * タイトルの文字数を制限し、HTMLを削除.
+ *
+ * @param string $title 省略前のタイトル
+ * @param integer Optional. $max 最大文字数. 50
+ *
+ * @return $title
+ */
+
+function sanitize_and_truncate_text(
+	$title,
+	$max = 50
+) {
+    // HTMLを削除
+    $title = wp_strip_all_tags( $title );
+    // $max文字以内に短縮し、その場合...を追記.
+	if ( mb_strlen( $title ) > $max ) {
+		$title = mb_substr( $title, 0, $max ) . '…';
+	}
+	return $title;
+}

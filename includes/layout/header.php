@@ -23,7 +23,10 @@ if ( is_front_page() ) {
 		<nav class="header__nav-pc nav-pc desktop">
 			<ul class="nav-pc__items">
 				<li class="nav-pc__item">
-					<a href="<?php echo esc_url( home_url( '/category/work/' ) ); ?>">Works</a>
+					<a href="<?php echo esc_url( home_url( '/posts/' ) ); ?>">Posts</a>
+				</li>
+				<li class="nav-pc__item">
+					<a href="<?php echo esc_url( home_url( '/category/works/' ) ); ?>">Works</a>
 				</li>
 				<li class="nav-pc__item">
 					<a href="<?php echo esc_url( home_url( '/category/news/' ) ); ?>">News</a>
@@ -50,7 +53,10 @@ if ( is_front_page() ) {
 		<nav id="sp-nav" class="header__nav-sp nav-sp mobile">
 			<ul class="nav-sp__items">
 				<li class="nav-sp__item">
-					<a href="<?php echo esc_url( home_url( '/category/work/' ) ); ?>">Works</a>
+					<a href="<?php echo esc_url( home_url( '/posts/' ) ); ?>">Posts</a>
+				</li>
+				<li class="nav-sp__item">
+					<a href="<?php echo esc_url( home_url( '/category/works/' ) ); ?>">Works</a>
 				</li>
 				<li class="nav-sp__item">
 					<a href="<?php echo esc_url( home_url( '/category/news/' ) ); ?>">News</a>

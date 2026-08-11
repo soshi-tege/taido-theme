@@ -10,13 +10,9 @@
 	<div class="posts-page__inner inner">
 		<h2 class="posts-page__heading heading">
 			<?php
-			if ( is_category() ) :
-			$categories = get_the_category();
-			$category_name = $categories[0]->cat_name;
-			echo $category_name;
-            else:
-            echo "Posts";
-            endif;
+			// 「Archive」ページは「Posts」に置き換え.
+			echo esc_html( str_replace( 'Archives', 'Posts', get_the_archive_title() ) );
+			$is_category = is_category();
 			?>
 		</h2>
 		<?php
@@ -28,7 +24,10 @@
 			while ( have_posts() ) :
 				the_post();
 				?>
-			<li class="cards__item cards__item card">
+			<?php
+			$is_sticky = is_sticky() ? "sticky" : '';
+			?>
+			<li class="cards__item cards__item card <?php echo esc_attr( $is_sticky ); ?>">
 				<a href="<?php the_permalink(); ?>">
 					<div class="card__content card__content--vertical">
 						<?php
@@ -44,27 +43,34 @@
 						<img src="<?php echo esc_url( $src ); ?>" alt="#" class="card__img">
 						<div>
 							<?php
-							// カテゴリーを取得して表示（空の場合"Uncategorized"を表示）.
-							$categories = get_the_category();
-							if ( ! empty( $categories ) ) :
-								$category = $categories[0]->name;
-									else :
-										$category = 'Uncategorized';
-									endif;
-									// 長すぎるタイトルを短縮.
-									$the_title = get_the_title();
-									if ( mb_strlen( $the_title ) > 30 ) {
-										$the_title = mb_substr( $the_title, 0, 30 ) . '…';
-									}
-									// 長すぎる抜粋を短縮.
-									$excerpt = get_the_excerpt();
-									if ( mb_strlen( $excerpt ) > 60 ) {
-										$excerpt = mb_substr( $excerpt, 0, 60 ) . '…';
-									}
-									?>
-							<span class="card__category"><?php echo esc_html( $category ); ?></span>
-							<h3 class="card__heading"><?php echo esc_html( $the_title ); ?></h3>
+							// 「カテゴリーアーカイブ」内ではカテゴリの記載を省略（全て同一のため）.
+							if ( ! $is_category ):
+    							// カテゴリーを全て取得して最初のものを表示（空の場合"Uncategorized"を表示）.
+    							$categories = get_the_category();
+    							if ( ! empty( $categories ) ) :
+    								$category = $categories[0]->name;
+								else :
+									$category = 'Uncategorized';
+								endif;
+                                ?>
+                            <span class="card__category"><?php echo esc_html( $category ); ?></span>
+                            <?php endif; ?>
+                            <?php
+                                $title = get_the_title();
+                                if ( $title ):
+								// タイトルを30字以内にしHTMLを省略する.
+								$title = sanitize_and_truncate_text( $title );
+								?>
+							<h3 class="card__heading"><?php echo esc_html( $title ); ?></h3>
+							<?php endif; ?>
+							<?php
+								// 長すぎる抜粋を短縮.
+								$excerpt = get_the_excerpt();
+								if ( $excerpt ):
+								$excerpt = sanitize_and_truncate_text( $excerpt, 180 );
+								?>
 							<p class="card__excerpt"><?php echo esc_html( $excerpt ); ?></p>
+							<?php endif; ?>
 						</div>
 					</div>
 				</a>

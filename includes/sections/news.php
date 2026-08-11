@@ -8,7 +8,7 @@
 		$args      = array(
 			'post_type'      => 'post',
 			'category_name'  => 'news',
-			'posts_per_page' => 4,
+			'posts_per_page' => 5,
 		);
 		$the_query = new WP_Query( $args );
 		if ( $the_query->have_posts() ) :
@@ -21,15 +21,15 @@
 			<li class="news__item">
 				<a href="<?php echo esc_url( get_permalink() ); ?>">
 					<div class="news__block">
+						<time class="news__time"><?php echo get_the_date(); ?></time>
 						<?php
-							// 長すぎるタイトルを短縮.
-							$the_title = get_the_title();
-							if ( mb_strlen( $the_title ) > 30 ) {
-								$the_title = mb_substr( $the_title, 0, 30 ) . '…';
-							}
+							$title = get_the_title();
+                                if ( $title ):
+								// タイトルを30字以内にしHTMLを省略する.
+								$title = sanitize_and_truncate_text( $title );
 							?>
-							<time class="news__time"><?php echo get_the_date(); ?></time>
-							<h3 class="news__post-title"><?php echo esc_html( $the_title ); ?></h3>
+						<h3 class="news__post-title"><?php echo esc_html( $title ); ?></h3>
+						<?php endif; ?>
 					</div>
 				</a>
 			</li>

@@ -72,6 +72,10 @@
     bottom: 0;
 }
 
+.header__drawer.is-active span {
+    background-color: $white;
+}
+
 .header__drawer.is-active span:nth-child(1) {
     // (hamburgerの高さ - spanの高さ) / 2
     top: rem(9px);
