@@ -22,12 +22,14 @@ if (typeof (Storage) !== "undefined") {
     }
 }
 
-// トップ画像を自動再生（videoタグのautoplayが動かない場合の予備）
-const topAnimation = document.getElementById("top-animation");
+// トップ動画を自動再生（videoタグのautoplayが動かない場合のバックアップ）
+const topVideo = document.getElementById("top-animation");
 const topImage = document.getElementById("top-animation-fallback");
-let videoStarted = false;
+topVideo.addEventListener('suspend', () => {
+    console.log("In low power mode");
+});
 topAnimation.addEventListener("playing", async () => {
-    videoStarted = true;
+    console.log("Not in low power mode");
 }, { once: true })
 
 topAnimation.play();
