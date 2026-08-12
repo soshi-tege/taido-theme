@@ -86,7 +86,7 @@ if (typeof (Storage) !== "undefined" && preloader) {
 // トップ動画を自動再生（videoタグのautoplayが動かない場合のバックアップ）
 const topVideo = document.getElementById("top-animation");
 const topImage = document.getElementById("top-animation-fallback");
-const promise = undefined;
+let promise = undefined;
 if (topVideo && topImage) {
     promise = topVideo.play();
 }
