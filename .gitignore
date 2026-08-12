@@ -7,7 +7,6 @@ composer.lock
 .DS_Store
 *.log
 .sass-cache/
-*.map
 package-lock.json
 .env
 *.sql
