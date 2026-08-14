@@ -1,7 +1,7 @@
 
-# Taido Project テーマ
+# TAIDO Project テーマ
 
-Arc & Beyond社 Taido Project 専用のWordPressテーマです。
+TAIDO Project 専用のWordPressテーマです。
 
 ## 必要環境
 
@@ -10,11 +10,11 @@ Arc & Beyond社 Taido Project 専用のWordPressテーマです。
 
 ## テーマの編集手順（開発者用）
 
-1. [GitHub リポジトリ](https://github.com/soshi-tege/taido-theme) からリポジトリを取得し、作業用ブランチを作成します。（重要：mainブランチへの直接の git push はブロックされます）
-2. ローカル環境で「Taido Project」テーマを有効化します。
-3. 任意のエディターで該当ファイルを編集します。
-4. フロントページや投稿ページを開き、表示崩れがないことを確認します。
-5. 変更内容を git push して Pull Request を作成し、テーマ管理者（@soshi-tege）をメンションします。
+1. [GitHub リポジトリ](https://github.com/soshi-tege/taido-theme) からリポジトリを取得し、作業用ブランチを作成します。（重要：mainブランチへの直接の git push はブロックされます。）
+2. ローカル環境で「Taido Project」テーマを有効化
+3. 任意のエディターで該当ファイルを編集
+4. フロントページや投稿ページを開き、表示崩れがないことを確認
+5. 変更内容を git push して Pull Request を作成し、テーマ管理者（@soshi-tege）をメンション
 
 ## 開発依存パッケージのインストール
 

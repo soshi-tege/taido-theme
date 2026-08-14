@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 <section class="post section">
 	<div class="post__inner inner">
-		<h1>
+		<h1 class="post__title">
 			<?php the_title(); ?>
 		</h1>
 		<?php the_content(); ?>

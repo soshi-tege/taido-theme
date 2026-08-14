@@ -1,6 +1,6 @@
 <section class="news section">
 	<div class="news__inner inner">
-		<h2 class="news__heading heading animate pop-up">
+		<h2 class="news__heading heading animation-viewport pop-up">
 			News
 		</h2>
 		<?php
@@ -21,7 +21,7 @@
 			<li class="news__item">
 				<a href="<?php echo esc_url( get_permalink() ); ?>">
 					<div class="news__block">
-						<time class="news__time"><?php echo get_the_date(); ?></time>
+						<time class="news__time"><?php echo esc_html( get_the_date( 'F j, Y' ) ); ?></time>
 						<?php
 							$title = get_the_title();
                                 if ( $title ):
@@ -39,10 +39,10 @@
 			?>
 		</ul>
 		<?php endif; ?>
-        <a href="<?php echo esc_url( home_url( '/category/news/' ) ); ?>" class="news__button button">
-            <span class="button__text" button-text="View All">
-                View All
-            </span>
-        </a>
+		<?php get_template_part( 'components/button', null, array(
+            'url' => home_url( '/category/news/' ),
+            'text' => 'View All',
+            'custom_css' => 'news__button'
+        )); ?>
 	</div>
 </section>

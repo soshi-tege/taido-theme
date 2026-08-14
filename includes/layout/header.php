@@ -15,12 +15,22 @@ if ( is_front_page() ) {
 " 
 <?php
 if ( is_front_page() ) {
-	echo "id='header'"; }
+	echo "id='header-scroll'"; }
 ?>
 >
 	<div class="header__inner inner">
-		<a class="header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/common/logo.png" alt="Arc and Beyond"></a>
-		<nav class="header__nav-pc nav-pc desktop">
+	<?php
+	// トップページにおいてのみロゴをh1タグにする.
+	$logo_tag = is_front_page() ? 'h1' : 'div';
+	?>
+	<<?php echo esc_html( $logo_tag ) ?> class="header__logo">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/common/logo.png" alt="TAIDO Project">
+		</a>
+    </<?php echo esc_html( $logo_tag ) ?>>
+    <?php is_front_page() ? '</h1>' : ''; ?>
+    <a class="header__skip-to-main" href="#main-content">Skip to Main Content</a>
+		<nav class="header__nav-pc nav-pc desktop" aria-label="Main Navigation">
 			<ul class="nav-pc__items">
 				<li class="nav-pc__item">
 					<a href="<?php echo esc_url( home_url( '/posts/' ) ); ?>">Posts</a>
@@ -45,12 +55,22 @@ if ( is_front_page() ) {
 				</li>
 			</ul>
 		</nav>
-		<button id="hamburger" class="header__drawer js-hamburger mobile">
-			<span></span>
-			<span></span>
-			<span></span>
+		<button
+		id="hamburger-button"
+		class="header__drawer mobile"
+		aria-controls="sp-nav"
+		aria-label="Open Navigation Menu"
+		aria-expanded="false"
+		>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
 		</button>
-		<nav id="sp-nav" class="header__nav-sp nav-sp mobile">
+		<nav
+		id="sp-nav"
+		class="header__nav-sp nav-sp mobile"
+		aria-label="Main Navigation"
+		>
 			<ul class="nav-sp__items">
 				<li class="nav-sp__item">
 					<a href="<?php echo esc_url( home_url( '/posts/' ) ); ?>">Posts</a>

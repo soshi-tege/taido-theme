@@ -9,6 +9,7 @@
     line-height: 1.2;
     font-family: $headline-font;
     transition: 0.3s;
+
     @include mq("md") {
         font-size: rem(48px);
     }

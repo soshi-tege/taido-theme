@@ -8,9 +8,18 @@ html {
     font-size: $font-size-sp;
 }
 
+// ボタン等フォーカスの当たった要素が固定ヘッダーに隠れるのを防ぐ
+.scroll-padding {
+    scroll-padding-top: 90px;
+}
+
 @media screen and (min-width: 768px) {
     html {
         font-size: $font-size-pc;
+    }
+
+    .scroll-padding {
+        scroll-padding-top: 100px;
     }
 }
 
@@ -116,4 +125,15 @@ $mediaquerys: (
 // GutenbergのAlignオプションはfloatを使用するため、画像ごとに一度リセットする
 .wp-block-image {
     clear: both;
+}
+
+// reduced-motionモードでアニメーションを無効化する.
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }

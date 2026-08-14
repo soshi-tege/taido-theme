@@ -1,6 +1,6 @@
 <section class="cta section">
 	<div class="cta__inner inner">
-		<h2 class="cta__heading heading animate pop-up">
+		<h2 class="cta__heading heading animation-viewport pop-up">
 			We Always Appreciate Your Voice
 		</h2>
         <h3 class="cta__subheading">
@@ -8,20 +8,24 @@
 		</h3>
 		<h4 class="cta__h4">Questions About Learning Anime Creation</h4>
         <div class="accordion">
-            <button class="accordion__button">
-                I would like to learn animation.
-            </button>
-            <div class="accordion__panel">
+            <h5 class="accordion__h5">
+                <button class="accordion__button" aria-expanded="false" aria-controls="faq-learning">
+                    I would like to learn animation.
+                </button>
+            </h5>
+            <div class="accordion__panel" id="faq-learning" id="faq-learning">
                 <p>
-                    We plan to release a course in [Month] [Year] where you can learn Japanese-style anime production online, for free. We will update this website with the latest information as it becomes available.
+                    We are planning to release a course in [Month] [Year] where you can learn Japanese-style anime production online, for free. We will update this website with the latest information as it becomes available.
                 </p>
             </div>
         </div>
         <div class="accordion">
-            <button class="accordion__button">
-                I want to share the anime I’ve created. I want Japanese people to watch it too.
-            </button>
-            <div class="accordion__panel">
+            <h5 class="accordion__h5">
+                <button class="accordion__button" aria-expanded="false" aria-controls="faq-sharing">
+                    I want to share my anime projects. I want Japanese people to watch it too.
+                </button>
+            </h5>
+            <div class="accordion__panel" id="faq-sharing">
                 <p>
                     We are developing a platform where individual and group anime creators can share their illustrations and animations and connect with Japanese animators and production companies. The latest information will be updated on this website as it becomes available.
                 </p>
@@ -29,43 +33,75 @@
         </div>
 		<h4 class="cta__h4">Questions Regarding partnership</h4>
 		<div class="accordion">
-            <button class="accordion__button">
-                I want to share the anime I’ve created. I want Japanese people to watch it too.
-            </button>
-            <div class="accordion__panel">
+		    <h5 class="accordion__h5">
+                <button class="accordion__button" aria-expanded="false" aria-controls="faq-connection">
+                    I want to speak directly with or connect to Japanese animators and production companies.
+                </button>
+		    </h5>
+            <div class="accordion__panel" id="faq-connection">
                 <p>
-                    We are developing a platform where individual and group anime creators can share their illustrations and animations and connect with Japanese animators and production companies. The latest information will be updated on this website as it becomes available.
+                    The TAIDO Project held the TAIDO Animation Award 2026 in March 2026. Going forward, we plan to host events—both online and offline—that serve as a bridge between African and Japanese creators. The latest information will be updated on this website as it becomes available.
                 </p>
             </div>
         </div>
         <div class="accordion">
-            <button class="accordion__button">
-                I want to share the anime I’ve created. I want Japanese people to watch it too.
-            </button>
-            <div class="accordion__panel">
+            <h5 class="accordion__h5">
+                <button class="accordion__button" aria-expanded="false" aria-controls="faq-employment">
+                    I want to hire an animator or am looking for fellow professionals to work with.
+                </button>
+            </h5>
+            <div class="accordion__panel" id="faq-employment">
                 <p>
-                    We are developing a platform where individual and group anime creators can share their illustrations and animations and connect with Japanese animators and production companies. The latest information will be updated on this website as it becomes available.
+                    We are developing a platform where individual and organizational animation creators can publish their illustrations and animations and connect with Japanese animators and production companies. The latest information will be updated on this website as it becomes available.
+                </p>
+            </div>
+        </div>
+		<div class="accordion">
+		    <h5 class="accordion__h5">
+                <button class="accordion__button" aria-expanded="false" aria-controls="faq-question-about-partners">
+                    I have a question about a specific TAIDO partner.
+                </button>
+		    </h5>
+            <div class="accordion__panel" id="faq-question-about-partners">
+                <p>
+                    For questions not answered on this site, please use the contact form.
+                </p>
+            </div>
+        </div>
+        <div class="accordion">
+            <h5 class="accordion__h5">
+                <button class="accordion__button" aria-expanded="false" aria-controls="faq-collaboration">
+                    I want to co-produce an anime with TAIDO.
+                </button>
+            </h5>
+            <div class="accordion__panel" id="faq-collaboration">
+                <p>
+                    For business collaboration requests, please use the contact form.
                 </p>
             </div>
         </div>
 		<h4 class="cta__h4">Questions Regarding Media and Publication</h4>
 		<div class="accordion">
-            <button class="accordion__button">
-                I want to share the anime I’ve created. I want Japanese people to watch it too.
-            </button>
-            <div class="accordion__panel">
+		    <h5 class="accordion__h5">
+                <button class="accordion__button" aria-expanded="false" aria-controls="faq-interview">
+                    I want to interview TAIDO or its partners.
+                </button>
+		    </h5>
+            <div class="accordion__panel" id="faq-interview">
                 <p>
-                    We are developing a platform where individual and group anime creators can share their illustrations and animations and connect with Japanese animators and production companies. The latest information will be updated on this website as it becomes available.
+                    Members of the Japanese media should contact us via taido-animation.com; those in Africa (English-speaking regions) should contact us via en.taido-animation.com. Staff fluent in the respective languages will assist you.
                 </p>
             </div>
         </div>
         <div class="accordion">
-            <button class="accordion__button">
-                I want to share the anime I’ve created. I want Japanese people to watch it too.
-            </button>
-            <div class="accordion__panel">
+            <h5 class="accordion__h5">
+                <button class="accordion__button" aria-expanded="false" aria-controls="faq-support">
+                    I want to support TAIDO’s activities.
+                </button>
+            </h5>
+            <div class="accordion__panel" id="faq-support">
                 <p>
-                    We are developing a platform where individual and group anime creators can share their illustrations and animations and connect with Japanese animators and production companies. The latest information will be updated on this website as it becomes available.
+                    If you’re a Japanese speaker, please contact us from taido-animation.com; if you're an English speaker, please contact us from en.taido-animation.com (this website). Staff fluent in the respective languages will assist you.
                 </p>
             </div>
         </div>
@@ -75,10 +111,10 @@
 		<p class="cta__paragraph">
 		If you have a question about something else, don't hesitate to reach out to us. <br>
 		</p>
-        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="cta__button button">
-            <span class="button__text" button-text="Contact">
-                Contact
-            </span>
-        </a>
+		<?php get_template_part( 'components/button', null, array(
+            'url' => home_url( '/contact/' ),
+            'text' => 'Contact',
+            'custom_css' => 'cta__button'
+        )); ?>
 	</div>
 </section>

@@ -11,7 +11,7 @@
 <?php get_template_part( 'includes/sections/projects' ) ?>
 <?php get_template_part( 'includes/sections/roadmap' ) ?>
 <?php get_template_part( 'includes/sections/mission' ) ?>
-<?php get_template_part( 'includes/sections/voice' ) ?>
+<?php get_template_part( 'includes/sections/messages' ) ?>
 <?php get_template_part( 'includes/sections/works' ) ?>
 <?php get_template_part( 'includes/sections/news' ) ?>
 <?php get_template_part( 'includes/sections/cta' ) ?>

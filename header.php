@@ -7,7 +7,8 @@
 
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!-- トップページではヘッダーを固定するため、scroll-paddingを指定する -->
+<html lang="en" class="<?php echo is_front_page() ? "scroll-padding" : '' ?>">
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,4 +16,4 @@
 </head>
 <body>
 <?php get_template_part( 'includes/layout/header' ); ?>
-<main>
+<main id="main-content">

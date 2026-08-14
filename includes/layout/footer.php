@@ -9,8 +9,8 @@
 
 <footer class="footer">
     <div class="footer__inner inner">
-    	<a class="footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/common/logo.png" alt="Arc and Beyond"></a>
-    	<nav class="footer__nav">
+    	<a class="footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/common/logo.png" alt="TAIDO Project"></a>
+    	<nav class="footer__nav" aria-label="Footer Navigation">
     		<ul class="footer__items">
     			<li class="footer__item">
     			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -55,7 +55,7 @@
     		</ul>
     	</nav>
     	<p class="footer__copyright">
-    		&copy; 2026 Arc & Beyond. All rights reserved.
+    		&copy; 2026 TAIDO Project. All rights reserved.
     	</p>
     </div>
 </footer>

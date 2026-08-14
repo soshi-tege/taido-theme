@@ -53,20 +53,34 @@ function theme_script_init() {
 		'theme-google-fonts',
 		get_template_directory_uri() . '/css/google-fonts.css',
 		array(),
-		$fonts_version,
+		null,
+		'all'
+	);
+	wp_enqueue_style(
+		'scroll-hint',
+		'https://unpkg.com/scroll-hint@latest/css/scroll-hint.css',
+		array( 'theme-google-fonts' ),
+		$style_version,
 		'all'
 	);
 	wp_enqueue_style(
 		'theme-style',
 		get_template_directory_uri() . '/css/style.css',
-		array( 'theme-google-fonts' ),
-		$style_version,
+		array( 'theme-google-fonts', 'scroll-hint' ),
+		null,
 		'all'
+	);
+	wp_enqueue_script(
+		'scroll-hint',
+		'https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js',
+		array(),
+		null,
+		true
 	);
 	wp_enqueue_script(
 		'theme-script',
 		get_template_directory_uri() . '/js/script.js',
-		array(),
+		array( 'scroll-hint' ),
 		$script_version,
 		true
 	);

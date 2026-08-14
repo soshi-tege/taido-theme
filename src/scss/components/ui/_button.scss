@@ -6,14 +6,14 @@
     min-width: rem(160px);
     background-color: $secondary-color;
     text-decoration: none;
-    transition: 0.3s;
     text-align: center;
     font-size: rem(20px);
     border: 1px solid $black;
-    border-radius: rem(15px);
+    border-radius: rem(16px);
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
     background-color: $accent-color;
     filter: brightness(1.2);
 }
@@ -27,7 +27,7 @@
 
 .button__text::before,
 .button__text::after {
-    content: attr(button-text);
+    content: attr(button-text) / "";
     position: absolute;
     top: 0;
     left: 0;
@@ -45,10 +45,12 @@
     transform: translateY(100%);
 }
 
-.button:hover .button__text::before {
+.button:hover .button__text::before,
+.button:focus .button__text::before {
     transform: translateY(-100%);
 }
 
-.button:hover .button__text::after {
+.button:hover .button__text::after,
+.button:focus .button__text::after {
     transform: translateY(0);
 }

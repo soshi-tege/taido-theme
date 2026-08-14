@@ -1,0 +1,26 @@
+@use "base" as *;
+
+.typewriter {
+    display: inline-block;
+    animation-name: typewriter;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.typewriter.animated {
+    animation-play-state: running;
+}
+
+@keyframes typewriter {
+
+    // 右から100%隠し、左から少しずつ表示する
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}

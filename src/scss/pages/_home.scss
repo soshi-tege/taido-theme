@@ -17,7 +17,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     gap: 32px;
+    padding-bottom: 10%;
     width: 100%;
     max-width: rem(1340px);
     height: 100%;
@@ -27,14 +29,7 @@
     padding-right: 20px;
 }
 
-.hero__message {
-    width: 100%;
-    overflow: hidden;
-}
-
 .hero__message-text {
-    display: flex;
-    justify-content: flex-start;
     margin: 0;
     color: $white;
     font-size: rem(40px);
@@ -47,22 +42,13 @@
         font-size: rem(60px);
     }
 
-    // @include mq("md") {
-    //     font-size: rem(60px);
-    // }
-
     @include mq("lg") {
         font-size: rem(80px);
         -webkit-text-stroke: 3px #000000;
     }
 }
 
-.hero__message:nth-of-type(2) .hero__message-text {
-    animation-delay: 1.5s;
-}
-
-.hero__message:nth-of-type(3) .hero__message-text {
-    animation-delay: 3.5s;
+.hero__message-text:nth-of-type(3) {
     color: $yellow;
     font-family: $headline-font;
     font-style: italic;
@@ -73,7 +59,6 @@
 .hero__video {
     width: 100vw;
     height: 100vh;
-    min-height: 60vw;
     object-fit: cover;
 }
 
@@ -147,8 +132,19 @@
 }
 
 .projects__image-box {
-    position: relative;
-    width: 40%;
+
+
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+
+    // デスクトップでは隠す（下のbackground imageを使用）
+    @include mq("md") {
+        position: relative;
+        width: 40%;
+        height: auto;
+    }
 }
 
 .projects__image-box::after {
@@ -258,20 +254,44 @@
     margin: 0;
 }
 
+.roadmap__list {
+    counter-reset: roadmap;
+    list-style: none;
+}
+
+.roadmap__item {
+    counter-increment: roadmap;
+}
+
 .roadmap__subheading {
     font-size: rem(32px);
     color: $yellow;
 }
 
+.roadmap__subheading::before {
+    content: counter(roadmap);
+    display: inline-flex;
+    width: 1.2em;
+    height: 1.2em;
+    align-items: center;
+    justify-content: center;
+    color: $yellow;
+    font-weight: 900;
+    font-size: 0.9em;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+}
+
 .roadmap__accent {
     display: inline-block;
+    padding-right: rem(4px);
     font-family: $headline-font;
     font-style: italic;
     font-weight: 900;
-    padding-right: rem(4px);
+    font-size: 0.95em;
 }
 
-.voice__items {
+.message__items {
     display: flex;
     overflow-x: scroll;
     justify-content: flex-start;
@@ -284,9 +304,9 @@
     }
 }
 
-.voice__item {
+.message__item {
     max-width: rem(300px);
-    min-width: rem(180px);
+    min-width: max(rem(180px), calc((100% - rem(72px))/4));
 }
 
 .works__cards {
