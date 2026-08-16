@@ -40,6 +40,9 @@ function hamburgerControl() {
 // スクロールでヘッダーを出し入れする（トップページのみ）
 function headerScroll() {
     const header = document.getElementById("header-scroll");
+    if (!header) {
+        return;
+    }
     const windowHeight = window.innerHeight;
     let verticalPosition;
     window.addEventListener("scroll", function () {
@@ -141,6 +144,9 @@ async function activateHeroMessage() {
 function topVideo() {
     const topVideo = document.getElementById("top-video");
     const topImage = document.getElementById("top-video-fallback");
+    if (!topVideo && !topImage) {
+        return;
+    }
     if (isMotionReduced) {
         topVideo.style.display = "none";
         topImage.style.display = "block";
