@@ -30,9 +30,13 @@
 }
 
 .card__heading {
-    font-size: rem(24px);
+    font-size: rem(20px);
     margin-top: rem(8px);
     margin-bottom: 0;
+
+    @include mq("md") {
+        font-size: rem(24px);
+    }
 }
 
 .card__featured {

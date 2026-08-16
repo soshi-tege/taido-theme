@@ -29,6 +29,7 @@
         "gulp-plumber": "^1.2.1",
         "gulp-sass": "^6.0.1",
         "gulp-sourcemaps": "^3.0.0",
+        "gulp-webp": "^5.1.0",
         "imagemin-mozjpeg": "^10.0.0",
         "imagemin-oxipng": "^1.0.0",
         "imagemin-pngquant": "^10.0.0",

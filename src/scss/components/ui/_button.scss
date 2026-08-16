@@ -2,14 +2,19 @@
 
 .button {
     display: table;
-    padding: rem(12px) rem(24px);
-    min-width: rem(160px);
+    padding: rem(6px) rem(8px);
+    min-width: rem(120px);
     background-color: $secondary-color;
     text-decoration: none;
     text-align: center;
-    font-size: rem(20px);
     border: 1px solid $black;
     border-radius: rem(16px);
+
+    @include mq("md") {
+        padding: rem(12px) rem(24px);
+        min-width: rem(160px);
+        font-size: rem(20px);
+    }
 }
 
 .button:hover,

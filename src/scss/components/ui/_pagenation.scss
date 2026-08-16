@@ -2,54 +2,58 @@
 // wordpress標準のページネーションのスタイル調整
 
 .pagination {
-	margin-top: 10%;
-	text-align: center;
-	line-height: 3;
-	clear: both;
-	@include mq("md") {
-		margin-top: 6%;
-	}
+    margin-top: 10%;
+    text-align: center;
+    line-height: 3;
+    clear: both;
+
+    @include mq("md") {
+        margin-top: 6%;
+    }
 }
 
 .screen-reader-text {
-	height: 0;
+    height: 0;
 }
 
 .post-page-numbers,
 .page-numbers {
-	display: inline-block;
-	border: 1px solid $black;
-	padding: rem(4px) 0 (8px);
-	width: rem(32px);
-	font-size: rem(16px);
-	text-align: center;
-	line-height: 1;
-	@include mq("md") {
-		padding: rem(9px) 0 (11px);
-		width: rem(42px);
-		font-size: rem(20px);
-	}
+    display: inline-block;
+    border: 1px solid $black;
+    padding: rem(6px) 0;
+    width: rem(32px);
+    font-size: rem(16px);
+    text-align: center;
+    line-height: 1;
+
+    @include mq("md") {
+        padding: rem(9px) 0 (11px);
+        width: rem(42px);
+        font-size: rem(20px);
+    }
 }
 
-.page-numbers ~ .page-numbers,
-.post-page-numbers ~ .post-page-numbers {
-	margin-left: rem(10px);
+.page-numbers~.page-numbers,
+.post-page-numbers~.post-page-numbers {
+    margin-left: rem(10px);
 }
 
 .post-page-numbers,
 .page-numbers {
-	color: $black;
-	text-decoration: none;
-	line-height: 1;
+    color: $black;
+    text-decoration: none;
+    line-height: 1;
 }
 
 .post-page-numbers.current,
 .page-numbers.current {
-	color: $white;
-	background: #888;
+    color: $white;
+    background: #888;
 }
 
 .post-page-numbers.dots,
 .page-numbers.dots {
-	border-color: transparent;
+    border-color: transparent;
+    // 位置の微調整
+    transform: translateY(-5px);
 }

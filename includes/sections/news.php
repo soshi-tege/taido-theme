@@ -1,18 +1,19 @@
+<?php
+// カテゴリー「news」の最新の投稿を4つ取得する.
+$args      = array(
+	'post_type'      => 'post',
+	'category_name'  => 'news',
+	'posts_per_page' => 5,
+);
+$the_query = new WP_Query( $args );
+// ニュース記事がなければセクションごとスキップ.
+if ( $the_query->have_posts() ) :
+	?>
 <section class="news section">
 	<div class="news__inner inner">
 		<h2 class="news__heading heading animation-viewport pop-up">
 			News
 		</h2>
-		<?php
-		// カテゴリー「news」の最新の投稿を4つ取得する.
-		$args      = array(
-			'post_type'      => 'post',
-			'category_name'  => 'news',
-			'posts_per_page' => 5,
-		);
-		$the_query = new WP_Query( $args );
-		if ( $the_query->have_posts() ) :
-			?>
 		<ul class="news__items">
 			<?php
 			while ( $the_query->have_posts() ) :
@@ -38,7 +39,6 @@
 			wp_reset_postdata();
 			?>
 		</ul>
-		<?php endif; ?>
 		<?php get_template_part( 'components/button', null, array(
             'url' => home_url( '/category/news/' ),
             'text' => 'View All',
@@ -46,3 +46,4 @@
         )); ?>
 	</div>
 </section>
+<?php endif; ?>

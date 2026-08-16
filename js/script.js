@@ -17,9 +17,6 @@ async function main() {
     activateHeroMessage();
     // Scrollhintを動かす
     new ScrollHint('.js-scrollable');
-    // 手動でアイコンを追加（ライブラリの機能が動かないことがあるため）
-    const scrollHintIcon = document.querySelector("scroll-hint-icon-wrap");
-    scrollHintIcon.classList.add("is-active");
 }
 main();
 
@@ -112,21 +109,22 @@ function accordion() {
 // トップページでローディングアニメーションを表示する
 async function loadingAnimation() {
     const preloader = document.getElementById("preloader");
-    if (isMotionReduced) {
-        preloader.style.display = "none";
-    }
-    if (typeof (Storage) !== "undefined" && preloader) {
-        // 一度読み込まれたことがあったら表示しない
-        if (sessionStorage.getItem("visited")) {
-            preloader.style.display = "none";
-        } else {
-            sessionStorage.setItem("visited", true);
-            // ローディング中のユーザーインタラクションを無効化.
-            document.documentElement.inert = true;
-            await sleep(6000);
-            // ローディングアニメーションが終わったらユーザーインタラクションを有効化.
-            document.documentElement.inert = false;
-        }
+
+    if (!preloader) return;
+
+    const visited = localStorage.getItem("visited");
+    // 一度読み込まれたことがあったら表示しない
+    if (localStorage.getItem("visited") &&
+        Date.now() < Number(visited)) {
+        return;
+    } else {
+        // 1日の間は再度表示しない
+        localStorage.setItem("visited", Date.now() + 1000 * 60 * 60 * 24);
+        // ローディング中のユーザーインタラクションを無効化.
+        document.documentElement.inert = true;
+        await sleep(6000);
+        // ローディングアニメーションが終わったらユーザーインタラクションを有効化.
+        document.documentElement.inert = false;
     }
 }
 

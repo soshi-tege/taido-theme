@@ -6,8 +6,9 @@
     position: relative;
     z-index: 20;
     width: 100vw;
-    height: 100vh;
-    min-height: 60vw;
+    // 検索バーが出ていてもスクリーンの端から端まで計算される
+    height: 100lvh;
+    // min-height: 60vw;
 }
 
 .hero__inner {
@@ -18,8 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 32px;
-    padding-bottom: 10%;
+    gap: rem(32px);
     width: 100%;
     max-width: rem(1340px);
     height: 100%;
@@ -58,7 +58,8 @@
 
 .hero__video {
     width: 100vw;
-    height: 100vh;
+    // 検索バーが出ていてもスクリーンの端から端まで計算される
+    height: 100lvh;
     object-fit: cover;
 }
 
@@ -200,7 +201,10 @@
 .mission__heading {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: rem(42px);
+
+    @include mq("md") {
+        font-size: rem(42px);
+    }
 }
 
 .mission__paragraph {
@@ -255,17 +259,31 @@
 }
 
 .roadmap__list {
+    margin-top: rem(24px);
+    padding: 0;
     counter-reset: roadmap;
     list-style: none;
+
+    @include mq("md") {
+        margin-top: 0;
+    }
 }
 
 .roadmap__item {
     counter-increment: roadmap;
 }
 
+.roadmap__item ~ .roadmap__item {
+    margin-top: rem(32px);
+}
+
 .roadmap__subheading {
-    font-size: rem(32px);
+    font-size: rem(20px);
     color: $yellow;
+
+    @include mq("md") {
+        font-size: rem(32px);
+    }
 }
 
 .roadmap__subheading::before {
@@ -307,6 +325,11 @@
 .message__item {
     max-width: rem(300px);
     min-width: max(rem(180px), calc((100% - rem(72px))/4));
+}
+
+.message__item>figure>video {
+    // WordPressに自動生成されたものを上書き
+    aspect-ratio: 3 / 4 !important;
 }
 
 .works__cards {
@@ -397,12 +420,16 @@
 
 .cta__subheading {
     margin-top: rem(48px);
-    font-size: rem(32px);
+    font-size: rem(20px);
+
+    @include mq("md") {
+        font-size: rem(32px);
+    }
 }
 
 .cta__h4 {
     margin-top: rem(32px);
-    font-size: rem(24px);
+    font-size: rem(18px);
 }
 
 .cta__button {

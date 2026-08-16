@@ -7,6 +7,16 @@
 
 ?>
 
+<?php
+// カテゴリー「works」の最新の投稿を３つ取得する.
+$args      = array(
+	'post_type'      => 'post',
+	'category_name'  => 'works',
+	'posts_per_page' => 3,
+);
+$the_query = new WP_Query( $args );
+if ( $the_query->have_posts() ) :
+	?>
 <section class="works section">
 	<div class="works__inner inner">
 		<h2 class="works__heading heading animation-viewport pop-up">
@@ -18,16 +28,6 @@
 			<br>
 			See what our previous learners have created and be one of them.
 		</p>
-		<?php
-		// カテゴリー「works」の最新の投稿を３つ取得する.
-		$args      = array(
-			'post_type'      => 'post',
-			'category_name'  => 'works',
-			'posts_per_page' => 3,
-		);
-		$the_query = new WP_Query( $args );
-		if ( $the_query->have_posts() ) :
-			?>
 		<ul class="works__cards cards">
 			<?php
 			while ( $the_query->have_posts() ) :
@@ -82,7 +82,6 @@
 				wp_reset_postdata();
 			?>
 		</ul>
-		<?php endif; ?>
 		<?php get_template_part( 'components/button', null, array(
             'url' => home_url( '/category/works/' ),
             'text' => 'View All',
@@ -90,3 +89,4 @@
         )); ?>
 	</div>
 </section>
+<?php endif; ?>

@@ -15,7 +15,11 @@
         </div>
         <!-- デスクトップのみで表示（<768pxではdiv.projects__contentの背景として表示） -->
         <div class="projects__image-box fade-in animation-viewport">
-            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/images/home/projects.jpg" alt="Our partners at the TAIDO animation award 2026.">
+            <picture>
+                <source srcset="<?php echo esc_url( get_template_directory_uri() ) ?>/images/home/projects.webp" type="image/webp">
+                <source srcset="<?php echo esc_url( get_template_directory_uri() ) ?>/images/home/projects.jpg" type="image/jpg">
+                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/images/home/projects.jpg" alt="Our partners at the TAIDO animation award 2026.">
+            </picture>
         </div>
     </div>
 </section>

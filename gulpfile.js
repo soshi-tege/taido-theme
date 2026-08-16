@@ -5,6 +5,7 @@ import autoprefixer from "gulp-autoprefixer";
 import cleanCSS from "gulp-clean-css";
 import sourcemaps from "gulp-sourcemaps";
 import imagemin, { mozjpeg } from 'gulp-imagemin';
+import webp from 'gulp-webp';
 import pngquant from 'imagemin-pngquant';
 import { rm } from 'node:fs/promises';
 import browserSync from "browser-sync";
@@ -62,6 +63,13 @@ function imageCompressor() {
 		.pipe(gulp.dest(destinations.img))
 };
 
+// JPG/PNGからWebP画像を自動生成
+function imageWebpGenerator() {
+	return gulp.src('src/images/**/*.{jpg,jpeg,png}', { encoding: false })
+		.pipe(webp({ quality: 80 }))
+		.pipe(gulp.dest(destinations.img));
+}
+
 // 重複する画像を自動で削除
 const delPath = {
 	img: "./images/"
@@ -73,12 +81,12 @@ async function cleanImages() {
 // scssファイルと画像フォルダーへの変更を検知して対応する関数を実行（自動リロード）
 function watchFiles() {
 	watch(paths.css, series(scssCompressor, browserSyncReload));
-	watch(paths.img, series(series(cleanImages, imageCompressor, browserSyncReload)));
+	watch(paths.img, series(series(cleanImages, imageCompressor, imageWebpGenerator, browserSyncReload)));
 	// PHP, HTMLファイルが変更された時自動リロード
 	watch(paths.phpHTML, browserSyncReload);
 }
 
 // npx gulpで実行する関数
 export default series(
-	series(cleanImages, scssCompressor, imageCompressor),
+	series(cleanImages, scssCompressor, imageCompressor, imageWebpGenerator),
 	parallel(browserSyncInit, watchFiles));

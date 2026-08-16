@@ -5,7 +5,8 @@
     top: 0;
     right: 0;
     width: 100%;
-    height: 100vh;
+    // iOSのSafari等で検索バーの有無によりサイズが変わる（ ≒ 100vh）
+    height: 100dvh;
     transform: translateX(100%);
     transition: 0.3s;
     z-index: 50;

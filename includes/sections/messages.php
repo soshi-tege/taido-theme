@@ -1,38 +1,14 @@
 <?php
-$videos = [
-    array(
-        'url' => 'https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574%2F699dc01b81404e1b1b6c8404_Gary%20Preview%20%281%29_mp4.mp4',
-        'caption_file' => 'https://fake.vtt',
-        'name' => 'Name@Organization',
-    ),
-    array(
-        'url' => 'https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574%2F699dc01b81404e1b1b6c8404_Gary%20Preview%20%281%29_mp4.mp4',
-        'caption_file' => 'https://fake.vtt',
-        'name' => 'Name@Organization',
-    ),
-    array(
-        'url' => 'https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574%2F699dc01b81404e1b1b6c8404_Gary%20Preview%20%281%29_mp4.mp4',
-        'caption_file' => 'https://fake.vtt',
-        'name' => 'Name@Organization',
-    ),
-    array(
-        'url' => 'https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574%2F699dc01b81404e1b1b6c8404_Gary%20Preview%20%281%29_mp4.mp4',
-        'caption_file' => 'https://fake.vtt',
-        'name' => 'Name@Organization',
-    ),
-    array(
-        'url' => 'https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574%2F699dc01b81404e1b1b6c8404_Gary%20Preview%20%281%29_mp4.mp4',
-        'caption_file' => 'https://fake.vtt',
-        'name' => 'Name@Organization',
-    ),
-    array(
-        'url' => 'https://cdn.prod.website-files.com/6939a31d6f0751cc94b4a574%2F699dc01b81404e1b1b6c8404_Gary%20Preview%20%281%29_mp4.mp4',
-        'caption_file' => 'https://fake.vtt',
-        'name' => 'Name@Organization',
-    ),
-];
+$query = new WP_Query(array(
+    'post_type'      => 'messages',
+    'post_status'    => 'publish',
+    // 全ての投稿を取得する
+    'posts_per_page' => -1,
+));
 ?>
-<?php if ($videos): ?>
+<?php
+if ( $query->have_posts() ) :
+?>
 <section class="message section">
     <div class="message__inner inner">
         <h2 class="message__heading heading animation-viewport pop-up">
@@ -40,27 +16,22 @@ $videos = [
         </h2>
         <div>
             <ul class="message__items js-scrollable" aria-label="Partner message videos">
-                <?php foreach ($videos as $video): ?>
+                <?php 
+                while ( $query->have_posts() ):
+                    $query->the_post();
+                ?>
                 <li class="message__item">
-                    <video aria-label="Message from <?php esc_attr( $video['name'] ); ?>" controls muted disablepictureinpicture playsinline loop class="message__video">
-                        <source src="<?php echo esc_url( $video['url'] ); ?>">
-                        <track
-                            kind="captions"
-                            src="<?php echo esc_url( $video['caption_file'] ); ?>"
-                            srclang="en"
-                            label="English"
-                            default
-                        >
-                    </video>
+                    <?php the_content(); ?>
                     <p class="message__person">
                         <span class="message__name">
-                            <?php echo esc_html( $video['name'] ); ?>
+                            <?php the_title(); ?>
                         </span>
                     </p>
                 </li>
-                <?php endforeach; ?>
+                <?php endwhile; ?>
             </ul>
         </div>
     </div>
 </section>
+<?php wp_reset_query(); ?>
 <?php endif; ?>

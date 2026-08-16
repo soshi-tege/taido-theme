@@ -17,5 +17,9 @@
 		<!-- Videoタグがサポートされていない場合 -->
 		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/top-video-fallback.jpg" alt="">
 	</video>
-	<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/top-video-fallback.jpg" alt="" id="top-video-fallback" class="hero__video hidden">
+	<picture class="hero__video hidden" id="top-video-fallback">
+        <source srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/top-video-fallback.webp" type="image/webp">
+        <source srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/top-video-fallback.jpg" type="image/jpg">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/top-video-fallback.jpg" alt="">
+    </picture>
 </section>

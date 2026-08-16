@@ -1,5 +1,9 @@
 @use "base" as *;
 
+html.skip-preloader .preloader {
+    display: none;
+}
+
 // 全てのアニメーションの秒数を管理.
 .preloader__icon {
     animation-delay: 0.3s;
@@ -21,8 +25,9 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
-    z-index: 1000;
+    // 検索バーが出ていてもスクリーンの端から端まで計算される
+    height: 100lvh;
+    z-index: 100;
     background-color: $accent-color;
     animation-name: preloader-fadeout;
     animation-iteration-count: 1;
@@ -94,6 +99,7 @@
     animation-name: preloader-fadein;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    z-index: 200;
 
     @include mq("md") {
         width: 45%;

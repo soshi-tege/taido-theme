@@ -83,6 +83,8 @@
 			);
 			the_posts_pagination( $args );
 			?>
+		<?php else: ?>
+		<p>No posts found on the page.</p>
 		<?php endif; ?>
 	</div>
 </section>

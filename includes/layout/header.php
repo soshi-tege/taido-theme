@@ -25,7 +25,7 @@ if ( is_front_page() ) {
 	?>
 	<<?php echo esc_html( $logo_tag ) ?> class="header__logo">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/common/logo.png" alt="TAIDO Project">
+		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/common/logo.svg" alt="TAIDO Project">
 		</a>
     </<?php echo esc_html( $logo_tag ) ?>>
     <?php is_front_page() ? '</h1>' : ''; ?>
