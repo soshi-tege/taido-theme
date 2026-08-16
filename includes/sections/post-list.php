@@ -8,13 +8,13 @@
 ?>
 <section class="posts-page section">
 	<div class="posts-page__inner inner">
-		<h2 class="posts-page__heading heading">
+		<h1 class="posts-page__title">
 			<?php
 			// 「Archive」ページは「Posts」に置き換え.
 			echo esc_html( str_replace( 'Archives', 'Posts', get_the_archive_title() ) );
 			$is_category = is_category();
 			?>
-		</h2>
+		</h1>
 		<?php
 		// 最新の投稿を全て取得する.
 		if ( have_posts() ) :
