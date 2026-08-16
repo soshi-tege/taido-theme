@@ -39,19 +39,24 @@
 					<!-- サムネイルは装飾目的のためaltテキストは指定しない -->
 					<img src="<?php echo esc_url( $src ); ?>" alt="" class="card__img">
 					<div>
-						<?php
-						// 「カテゴリーアーカイブ」内ではカテゴリの記載を省略（全て同一のため）.
-						if ( ! $is_category ):
-							// カテゴリーを全て取得して最初のものを表示（空の場合"Uncategorized"を表示）.
-							$categories = get_the_category();
-							if ( ! empty( $categories ) ) :
-								$category = $categories[0]->name;
-							else :
-								$category = 'Uncategorized';
-							endif;
-                            ?>
-                        <span class="card__category"><?php echo esc_html( $category ); ?></span>
-                        <?php endif; ?>
+					    <div class="card__meta">
+    						<?php
+    						// 「カテゴリーアーカイブ」内ではカテゴリの記載を省略（全て同一のため）.
+    						if ( ! $is_category ):
+    							// カテゴリーを全て取得して最初のものを表示（空の場合"Uncategorized"を表示）.
+    							$categories = get_the_category();
+    							if ( ! empty( $categories ) ) :
+    								$category = $categories[0]->name;
+    							else :
+    								$category = 'Uncategorized';
+    							endif;
+                                ?>
+                            <span class="card__category"><?php echo esc_html( $category ); ?></span>
+                            <?php endif; ?>
+					        <time datetime="<?php the_time( 'Y-m-d' ); ?>" class="card__time">
+					            <?php the_time( 'F j, Y' ); ?>
+					        </time>
+					    </div>
                         <?php
                             $title = get_the_title();
                             if ( $title ):

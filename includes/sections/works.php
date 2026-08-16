@@ -48,16 +48,9 @@ if ( $the_query->have_posts() ) :
 						<!-- サムネイルは装飾画像のためaltは指定しない -->
 						<img src="<?php echo esc_url( $src ); ?>" alt="" class="card__img">
 						<div>
-							<?php
-							// カテゴリーを取得して表示（空の場合"Uncategorized"を表示）.
-							$categories = get_the_category();
-							if ( ! empty( $categories ) ) :
-								$category = $categories[0]->name;
-									else :
-										$category = 'Uncategorized';
-									?>
-							<span class="card__category"><?php echo esc_html( $category ); ?></span>
-							<?php endif; ?>
+							<time datetime="<?php the_time( 'Y-m-d' ); ?>" class="card__time">
+					            <?php the_time( 'F j, Y' ); ?>
+					        </time>
 							<?php
                                 $title = get_the_title();
                                 if ( $title ):

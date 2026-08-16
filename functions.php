@@ -89,23 +89,32 @@ add_action( 'wp_enqueue_scripts', 'theme_script_init' );
 
 
 /**
- * タイトルの文字数を制限し、HTMLを削除.
+ * タイトル・抜粋などテキストの文字数を制限し、HTMLを削除.
  *
- * @param string $title 省略前のタイトル
- * @param integer Optional. $max 最大文字数. 50
+ * @param string $text 省略前のテキスト
+ * @param int    $max 最大文字数. Default 50.
  *
- * @return $title
+ * @return string 整形後のテキスト
  */
 
 function sanitize_and_truncate_text(
-	$title,
+	$text,
 	$max = 50
 ) {
-    // HTMLを削除
-    $title = wp_strip_all_tags( $title );
-    // $max文字以内に短縮し、その場合...を追記.
-	if ( mb_strlen( $title ) > $max ) {
-		$title = mb_substr( $title, 0, $max ) . '…';
+	// HTMLタグ・ショートコード・HTMLエンティティをプレーンテキスト化
+	$text = strip_shortcodes( $text );
+	$text = wp_strip_all_tags( $text );
+	$text = html_entity_decode( $text, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+
+	// Markdownリンク [text](url) は表示テキストのみ残す
+	$text = preg_replace( '/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/u', '$1', $text );
+
+	// 余分な空白を詰める（スペース・タブ・改行などを半角空白に統一）
+	$text = trim( preg_replace( '/\s+/u', ' ', $text ) );
+
+	// $max文字以内に短縮し、その場合...を追記.
+	if ( mb_strlen( $text ) > $max ) {
+		$text = mb_substr( $text, 0, $max ) . '…';
 	}
-	return $title;
+	return $text;
 }

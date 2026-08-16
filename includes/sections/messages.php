@@ -33,5 +33,5 @@ if ( $query->have_posts() ) :
         </div>
     </div>
 </section>
-<?php wp_reset_query(); ?>
+<?php wp_reset_postdata(); ?>
 <?php endif; ?>
