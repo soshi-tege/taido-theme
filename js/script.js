@@ -164,3 +164,13 @@ function topVideo() {
             });
     }
 }
+
+// Contact Form 7のメールが正常に送られたとき、Screen Readerでメッセージを伝える
+document.addEventListener('wpcf7mailsent', function (event) {
+    const response = event.target.querySelector('.wpcf7-response-output');
+    if (response) {
+        response.removeAttribute('aria-hidden');
+        response.setAttribute('role', 'status');
+        response.setAttribute('aria-live', 'polite');
+    }
+}, false);

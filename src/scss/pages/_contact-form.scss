@@ -3,6 +3,7 @@
 
 .wpcf7-form {
     max-width: 720px;
+    font-size: rem(20px);
 }
 
 .label~.label {
@@ -12,6 +13,11 @@
 span.label__example,
 span.wpcf7-form-control-wrap {
     display: block;
+}
+
+.label__example {
+    color: #515151;
+    font-size: rem(16px);
 }
 
 span.label__text {
@@ -30,4 +36,44 @@ span.label__required {
 
 .wpcf7-select {
     padding: rem(8px);
+}
+
+.wpcf7-text,
+.wpcf7-select,
+.wpcf7-textarea {
+    margin: rem(4px) 0;
+    padding: rem(8px);
+    border: 1px $black solid;
+    border-radius: rem(8px);
+}
+
+.wpcf7-text,
+.wpcf7-textarea {
+    width: 100%;
+}
+
+.form-button {
+    display: table;
+    padding: rem(6px) rem(8px);
+    min-width: rem(120px);
+    color: $white;
+    background-color: $secondary-color;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid $black;
+    border-radius: rem(16px);
+    transition: 0.3s;
+
+    @include mq("md") {
+        padding: rem(12px) rem(24px);
+        min-width: rem(160px);
+        font-size: rem(20px);
+    }
+}
+
+.form-button:hover,
+.form-button:focus {
+    color: $black;
+    background-color: $accent-color;
+    filter: brightness(1.2);
 }
