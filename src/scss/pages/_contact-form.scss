@@ -1,0 +1,33 @@
+// Contact Form 7用スタイル
+@use "base" as *;
+
+.wpcf7-form {
+    max-width: 720px;
+}
+
+.label~.label {
+    margin-top: rem(24px);
+}
+
+span.label__example,
+span.wpcf7-form-control-wrap {
+    display: block;
+}
+
+span.label__text {
+    display: flex;
+    align-items: center;
+}
+
+span.label__required {
+    color: $white;
+    background: #ff0000;
+    margin-left: rem(10px);
+    padding: 2px 6px 4px;
+    font-size: rem(14px);
+    border-radius: rem(5px);
+}
+
+.wpcf7-select {
+    padding: rem(8px);
+}
