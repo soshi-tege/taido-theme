@@ -191,7 +191,14 @@ document.addEventListener('wpcf7mailsent', function (event) {
 document.getElementById('skip-to-main')?.addEventListener('click', (e) => {
     const main = document.getElementById('main-content');
     if (!main) return;
+
     e.preventDefault();
+    if (!main.hasAttribute('tabindex')) {
+        main.setAttribute('tabindex', '-1');
+    }
+
     main.scrollIntoView({ block: 'start' });
-    main.focus({ preventScroll: true });
+    requestAnimationFrame(() => {
+        main.focus({ preventScroll: true });
+    });
 });

@@ -41,4 +41,4 @@
 </head>
 <body>
 <?php get_template_part( 'includes/layout/header' ); ?>
-<main id="main-content">
+<main id="main-content" tabindex="-1">
