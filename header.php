@@ -42,4 +42,3 @@
 <body>
 <?php get_template_part( 'includes/layout/header' ); ?>
 <main id="main-content">
-<div id="main-focus-start" tabindex="-1"></div>

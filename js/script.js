@@ -189,7 +189,7 @@ document.addEventListener('wpcf7mailsent', function (event) {
 
 
 document.getElementById('skip-to-main')?.addEventListener('click', (e) => {
-    const main = document.getElementById('main-focus-start');
+    const main = document.getElementById('main-content');
     if (!main) return;
     e.preventDefault();
     main.scrollIntoView({ block: 'start' });
