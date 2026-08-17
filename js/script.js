@@ -36,6 +36,8 @@ function hamburgerControl() {
         const isExpanded = hamburgerButton.getAttribute("aria-expanded") === 'true'
         hamburgerButton.setAttribute('aria-label', isExpanded ? 'Open Navigation Menu' : 'Close Navigation Menu');
         hamburgerButton.setAttribute("aria-expanded", String(!isExpanded));
+        // ハンバーガーメニューがオン"だった"（閉じられた）場合はspNavをinert化
+        spNav.inert = (isExpanded);
     });
 }
 
