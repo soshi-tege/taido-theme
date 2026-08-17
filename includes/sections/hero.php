@@ -22,4 +22,7 @@
         <source srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/top-video-fallback.jpg" type="image/jpg">
         <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home/top-video-fallback.jpg" alt="">
     </picture>
+    <p class="hero__credit" aria-hidden="true">
+        &copy; AnimaxFYB Studios
+    </p>
 </section>
