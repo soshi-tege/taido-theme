@@ -36,17 +36,12 @@ html.skip-preloader .preloader {
 
 @keyframes preloader-fadeout {
     0% {
-        display: block;
         opacity: 1;
-    }
-
-    99% {
-        opacity: 0;
     }
 
     100% {
-        display: none;
-        opacity: 1;
+        // JSで完全に消す（display: none;）
+        opacity: 0;
     }
 }
 
