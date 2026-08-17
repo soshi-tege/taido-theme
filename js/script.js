@@ -186,3 +186,12 @@ document.addEventListener('wpcf7mailsent', function (event) {
         response.setAttribute('aria-live', 'polite');
     }
 }, false);
+
+
+document.getElementById('skip-to-main')?.addEventListener('click', (e) => {
+    const main = document.getElementById('main-focus-start');
+    if (!main) return;
+    e.preventDefault();
+    main.scrollIntoView({ block: 'start' });
+    main.focus({ preventScroll: true });
+});
