@@ -41,9 +41,14 @@ body {
     >main {
         flex-grow: 1;
     }
+
+    >* {
+        // iOS の ChromeだとBody直下の要素が小さくなるため
+        width: 100%;
+    }
 }
 
-picture > img {
+picture>img {
     width: 100%;
 }
 
