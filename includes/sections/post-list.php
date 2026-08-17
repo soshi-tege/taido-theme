@@ -38,7 +38,7 @@
 					?>
 					<!-- サムネイルは装飾目的のためaltテキストは指定しない -->
 					<img src="<?php echo esc_url( $src ); ?>" alt="" class="card__img">
-					<div>
+					<div class="card__info">
 					    <div class="card__meta">
     						<?php
     						// 「カテゴリーアーカイブ」内ではカテゴリの記載を省略（全て同一のため）.
