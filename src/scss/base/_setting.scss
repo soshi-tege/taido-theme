@@ -43,6 +43,10 @@ body {
     }
 }
 
+picture > img {
+    width: 100%;
+}
+
 // 共通の色
 $black: #1E1D29;
 $primary-color: #E37819; // テーマカラー
