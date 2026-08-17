@@ -28,7 +28,9 @@ function sleep(ms) {
 function hamburgerControl() {
     const hamburgerButton = document.getElementById('hamburger-button');
     const spNav = document.getElementById('sp-nav');
+    const body = document.body
     hamburgerButton.addEventListener('click', function () {
+        body.classList.toggle("overflow-hidden");
         hamburgerButton.classList.toggle("is-active");
         spNav.classList.toggle("is-active");
         const isExpanded = hamburgerButton.getAttribute("aria-expanded") === 'true'

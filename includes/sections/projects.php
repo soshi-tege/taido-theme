@@ -18,7 +18,7 @@
             <picture>
                 <source srcset="<?php echo esc_url( get_template_directory_uri() ) ?>/images/home/projects.webp" type="image/webp">
                 <source srcset="<?php echo esc_url( get_template_directory_uri() ) ?>/images/home/projects.jpg" type="image/jpg">
-                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/images/home/projects.jpg" alt="Our partners at the TAIDO animation award 2026.">
+                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/images/home/projects.jpg" alt="Image of our partners at the TAIDO animation award 2026.">
             </picture>
         </div>
     </div>

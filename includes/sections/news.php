@@ -22,7 +22,7 @@ if ( $the_query->have_posts() ) :
 			<li class="news__item">
 				<a href="<?php echo esc_url( get_permalink() ); ?>">
 					<div class="news__block">
-						<time class="news__time"><?php echo esc_html( get_the_date( 'F j, Y' ) ); ?></time>
+						<time datetime="<?php the_time( 'Y-m-d' ); ?>" class="news__time"><?php echo esc_html( get_the_date( 'F j, Y' ) ); ?></time>
 						<?php
 							$title = get_the_title();
                                 if ( $title ):
