@@ -36,6 +36,7 @@ html.skip-preloader .preloader {
 
 @keyframes preloader-fadeout {
     0% {
+        display: block;
         opacity: 1;
     }
 

@@ -130,6 +130,8 @@ async function loadingAnimation() {
         await sleep(6000);
         // ローディングアニメーションが終わったらユーザーインタラクションを有効化.
         document.documentElement.inert = false;
+        // 
+        preloader.style.display = 'none';
     }
 }
 
