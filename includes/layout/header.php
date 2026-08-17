@@ -10,7 +10,7 @@
 <header class="header 
 <?php
 if ( is_front_page() ) {
-	echo 'fixed hidden'; }
+	echo 'sticky hidden'; }
 ?>
 " 
 <?php
