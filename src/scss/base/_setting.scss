@@ -131,6 +131,11 @@ $mediaquerys: (
     clear: both;
 }
 
+// カレンダーwidgetがスマホ版で画面化らはみ出ることを防ぐ
+.wp-block-calendar {
+    overflow: scroll;
+}
+
 // reduced-motionモードでアニメーションを無効化する.
 @media (prefers-reduced-motion: reduce) {
 
