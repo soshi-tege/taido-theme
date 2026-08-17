@@ -5,7 +5,7 @@
                 Passion is All You Need 
             </h2>
             <p class="projects__paragraph">
-                Our partners collaborated with experienced Japanese animators and anime studios to produce high-quality anime, delivering their traditions and history. They began their career as pioneers of African anime in Nigeria and Ghana. 
+                Our partners collaborated with experienced Japanese animators and anime studios to produce high-quality anime, delivering their traditions and history. They began their career as pioneers of African anime. 
             </p>
             <?php get_template_part( 'components/button', null, array(
                 'url' => home_url( '/projects/' ),
