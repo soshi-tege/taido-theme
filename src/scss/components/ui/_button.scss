@@ -4,11 +4,13 @@
     display: table;
     padding: rem(6px) rem(8px);
     min-width: rem(120px);
+    color: $black;
     background-color: $secondary-color;
     text-decoration: none;
     text-align: center;
     border: 1px solid $black;
     border-radius: rem(16px);
+    transition: 0.3s;
 
     @include mq("md") {
         padding: rem(12px) rem(24px);
@@ -21,41 +23,4 @@
 .button:focus {
     background-color: $accent-color;
     filter: brightness(1.2);
-}
-
-
-.button__text {
-    position: relative;
-    display: block;
-    overflow: hidden;
-}
-
-.button__text::before,
-.button__text::after {
-    content: attr(button-text) / "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: 0.3s;
-}
-
-.button__text::before {
-    color: $white;
-}
-
-.button__text::after {
-    color: $black;
-    transform: translateY(100%);
-}
-
-.button:hover .button__text::before,
-.button:focus .button__text::before {
-    transform: translateY(-100%);
-}
-
-.button:hover .button__text::after,
-.button:focus .button__text::after {
-    transform: translateY(0);
 }

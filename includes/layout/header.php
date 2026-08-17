@@ -29,7 +29,7 @@ if ( is_front_page() ) {
 		</a>
     </<?php echo esc_html( $logo_tag ) ?>>
     <?php is_front_page() ? '</h1>' : ''; ?>
-    <a class="header__skip-to-main" href="#main-content">Skip to Main Content</a>
+    <a class="header__skip-to-main" id="skip-to-main" href="#main-content">Skip to Main Content</a>
 		<nav class="header__nav-pc nav-pc desktop" aria-label="Main Navigation">
 			<ul class="nav-pc__items">
 				<li class="nav-pc__item">

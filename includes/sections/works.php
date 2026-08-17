@@ -47,7 +47,7 @@ if ( $the_query->have_posts() ) :
 						?>
 						<!-- サムネイルは装飾画像のためaltは指定しない -->
 						<img src="<?php echo esc_url( $src ); ?>" alt="" class="card__img">
-						<div>
+						<div class="card__info">
 							<time datetime="<?php the_time( 'Y-m-d' ); ?>" class="card__time">
 					            <?php the_time( 'F j, Y' ); ?>
 					        </time>
