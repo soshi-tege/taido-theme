@@ -1,5 +1,12 @@
 @use "base" as *;
 
+.nav-pc {
+    display: none;
+    @include mq("lg") {
+        display: block;
+    }
+}
+
 .nav-pc__items {
     display: flex;
 }

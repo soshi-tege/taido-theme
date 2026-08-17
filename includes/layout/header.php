@@ -30,7 +30,7 @@ if ( is_front_page() ) {
     </<?php echo esc_html( $logo_tag ) ?>>
     <?php is_front_page() ? '</h1>' : ''; ?>
     <a class="header__skip-to-main" id="skip-to-main" href="#main-content">Skip to Main Content</a>
-		<nav class="header__nav-pc nav-pc desktop" aria-label="Main Navigation">
+		<nav class="header__nav-pc nav-pc" aria-label="Main Navigation">
 			<ul class="nav-pc__items">
 				<li class="nav-pc__item">
 					<a href="<?php echo esc_url( home_url( '/posts/' ) ); ?>">Posts</a>
@@ -57,7 +57,7 @@ if ( is_front_page() ) {
 		</nav>
 		<button
 		id="hamburger-button"
-		class="header__drawer mobile"
+		class="header__drawer"
 		aria-controls="sp-nav"
 		aria-label="Open Navigation Menu"
 		aria-expanded="false"
@@ -68,7 +68,7 @@ if ( is_front_page() ) {
 		</button>
 		<nav
 		id="sp-nav"
-		class="header__nav-sp nav-sp mobile"
+		class="header__nav-sp nav-sp"
 		aria-label="Main Navigation"
 		inert
 		>

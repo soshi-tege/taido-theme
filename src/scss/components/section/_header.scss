@@ -15,7 +15,7 @@
     text-decoration-line: underline;
     text-decoration-color: transparent;
 
-    @include mq("md") {
+    @include mq("lg") {
         color: $black;
     }
 }
@@ -60,6 +60,9 @@
     appearance: none;
     background: transparent;
     border: none;
+    @include mq("lg") {
+        display: none;
+    }
 }
 
 .header__drawer span {
