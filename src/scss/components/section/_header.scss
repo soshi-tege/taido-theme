@@ -1,11 +1,17 @@
 @use "base" as *;
 
 .header {
-    width: 100%;
     padding: 10px 0;
     background-color: #ffffff;
     border-bottom: 1px solid black;
     z-index: 100;
+}
+
+.header.fixed {
+    left: 0;
+    right: 0;
+    width: auto;
+    box-sizing: border-box;
 }
 
 .header a {
