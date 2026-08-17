@@ -70,6 +70,7 @@ if ( is_front_page() ) {
 		id="sp-nav"
 		class="header__nav-sp nav-sp mobile"
 		aria-label="Main Navigation"
+		inert
 		>
 			<ul class="nav-sp__items">
 				<li class="nav-sp__item">
