@@ -55,6 +55,18 @@ $accent-color: #6090F0; // アクセントカラー
 $yellow: #FFC868;
 $white: #ffffff;
 
+/*
+WCAG 2.2 AA に禁止された組み合わせ
+
+大きい文字のみ可（24px以上・あるいはboldで18.66px以上）
+- $primary-color and $white
+- $secondary-color and $white
+- $accent-color and $white
+
+全ての文字サイズで禁止
+- $yellow and $white
+*/
+
 
 // 頻繁に使うpadding（inner共通）
 $padding-pc: 25px;
