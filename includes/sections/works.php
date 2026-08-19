@@ -20,7 +20,7 @@ if ( $the_query->have_posts() ) :
 <section class="works section">
 	<div class="works__inner inner">
 		<h2 class="works__heading heading animation-viewport pop-up">
-			Discover what our precious partners have achieved
+			Discover what pioneers of African anime have achieved
 		</h2>
 		<p class="works__paragraph">
 			We are looking for the young passion waiting to be discovered inside your heart.<br>

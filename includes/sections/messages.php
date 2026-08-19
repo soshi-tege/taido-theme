@@ -12,7 +12,7 @@ if ( $query->have_posts() ) :
 <section class="message section">
     <div class="message__inner inner">
         <h2 class="message__heading heading animation-viewport pop-up">
-            Meet the Community of African Anime Pioneers
+            Hear from our partners
         </h2>
         <ul class="message__items" aria-label="Partner message videos">
             <?php 
