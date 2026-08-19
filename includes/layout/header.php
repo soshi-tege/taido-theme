@@ -54,7 +54,7 @@ if ( is_front_page() ) {
 					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact</a>
 				</li>
 				<li class="nav-pc__item nav-pc__item--social">
-					<a target="_blank" aria-label="Link to Instagram" href="https://www.instagram.com/taido_animation_africa/">
+					<a target="_blank" aria-label="Instagram" href="https://www.instagram.com/taido_animation_africa/">
 					    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/common/instagram.svg" alt="Instagram">
 					</a>
 				</li>
@@ -100,7 +100,7 @@ if ( is_front_page() ) {
 					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact</a>
 				</li>
 				<li class="nav-sp__item nav-sp__item--social">
-					<a target="_blank" aria-label="Link to Instagram" href="https://www.instagram.com/taido_animation_africa/">
+					<a target="_blank" aria-label="Instagram" href="https://www.instagram.com/taido_animation_africa/">
 					    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/common/instagram.svg" alt="Instagram">
 					</a>
 				</li>
