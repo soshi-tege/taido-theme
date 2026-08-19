@@ -3,9 +3,18 @@
 .header {
     width: 100%;
     padding: 10px 0;
-    background-color: #ffffff;
-    border-bottom: 1px solid black;
+    background-color: $white;
+    border-bottom: 1px solid $black;
     z-index: 100;
+}
+
+.header-transparent {
+    border-color: transparent;
+    background-color: transparent;
+    color: $white;
+    .header__logo {
+        filter: invert(1);
+    }
 }
 
 .header a {
@@ -16,7 +25,7 @@
     text-decoration-color: transparent;
 
     @include mq("lg") {
-        color: $black;
+        color: inherit;
     }
 }
 
@@ -32,10 +41,12 @@
 }
 
 .header__skip-to-main {
-    position: absolute;
-    left: 30%;
+    position: fixed;
+    top: 0;
+    left: 0;
     margin-left: rem(32px);
     transform: translateY(-200%);
+    background-color: $accent-color;
 
 }
 
@@ -50,6 +61,7 @@
 .header__logo {
     margin: 0;
     max-width: rem(158px);
+    transition: 0.3s filter;
 }
 
 .header__drawer {
@@ -60,6 +72,7 @@
     appearance: none;
     background: transparent;
     border: none;
+
     @include mq("lg") {
         display: none;
     }

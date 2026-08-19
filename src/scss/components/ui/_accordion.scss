@@ -28,18 +28,11 @@
     }
 }
 
-.accordion__button:after {
-    // スクリーンリーダーから隠す（スラッシュ後の空文字が読み上げられる）
-    content: '\002B' / "";
+.accordion__icon {
     color: $black;
     font-weight: bold;
     float: right;
     margin-left: 5px;
-}
-
-.accordion__button.active:after {
-    // スクリーンリーダーから隠す（スラッシュ後の空文字が読み上げられる）
-    content: "\2212" / "";
 }
 
 .accordion__panel {
@@ -52,5 +45,3 @@
         padding: 0 rem(16px);
     }
 }
-
-.accordion__button.active~.accordion__panel {}

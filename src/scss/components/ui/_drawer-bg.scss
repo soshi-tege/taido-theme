@@ -1,0 +1,20 @@
+@use "base" as *;
+
+.drawer-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .7);
+    display: none;
+    z-index: 50;
+}
+
+.drawer-bg.is-active {
+    display: block;
+
+    @include mq("md") {
+        display: none;
+    }
+}

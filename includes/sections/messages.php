@@ -14,23 +14,21 @@ if ( $query->have_posts() ) :
         <h2 class="message__heading heading animation-viewport pop-up">
             Meet the Community of African Anime Pioneers
         </h2>
-        <div>
-            <ul class="message__items js-scrollable" aria-label="Partner message videos">
-                <?php 
-                while ( $query->have_posts() ):
-                    $query->the_post();
-                ?>
-                <li class="message__item">
-                    <?php the_content(); ?>
-                    <p class="message__person">
-                        <span class="message__name">
-                            <?php the_title(); ?>
-                        </span>
-                    </p>
-                </li>
-                <?php endwhile; ?>
-            </ul>
-        </div>
+        <ul class="message__items" aria-label="Partner message videos">
+            <?php 
+            while ( $query->have_posts() ):
+                $query->the_post();
+            ?>
+            <li class="message__item">
+                <?php the_content(); ?>
+                <p class="message__person">
+                    <span class="message__name">
+                        <?php the_title(); ?>
+                    </span>
+                </p>
+            </li>
+            <?php endwhile; ?>
+        </ul>
     </div>
 </section>
 <?php wp_reset_postdata(); ?>

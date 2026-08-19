@@ -10,13 +10,13 @@ async function main() {
     }
     topVideo();
     hamburgerControl();
-    headerScroll();
+    // リロード時の場所を判定して色を調整.
+    headerToggleTransparent();
+    window.addEventListener("scroll", headerToggleTransparent);
     accordion();
     // ローディングアニメーションの後にheroMessageを動かす
     await loadingAnimation();
     activateHeroMessage();
-    // Scrollhintを動かす
-    new ScrollHint('.js-scrollable');
 }
 main();
 
@@ -28,35 +28,38 @@ function sleep(ms) {
 function hamburgerControl() {
     const hamburgerButton = document.getElementById('hamburger-button');
     const spNav = document.getElementById('sp-nav');
+    const drawer = document.getElementById("drawer");
     const body = document.body
-    hamburgerButton.addEventListener('click', function () {
-        body.classList.toggle("overflow-hidden");
-        hamburgerButton.classList.toggle("is-active");
-        spNav.classList.toggle("is-active");
-        const isExpanded = hamburgerButton.getAttribute("aria-expanded") === 'true'
-        hamburgerButton.setAttribute('aria-label', isExpanded ? 'Open Navigation Menu' : 'Close Navigation Menu');
-        hamburgerButton.setAttribute("aria-expanded", String(!isExpanded));
-        // ハンバーガーメニューがオン"だった"（閉じられた）場合はspNavをinert化
-        spNav.inert = (isExpanded);
+    const triggerElements = [drawer, hamburgerButton];
+    triggerElements.forEach(element => {
+        element.addEventListener('click', function () {
+            body.classList.toggle("overflow-hidden");
+            hamburgerButton.classList.toggle("is-active");
+            spNav.classList.toggle("is-active");
+            drawer.classList.toggle("is-active");
+            const isExpanded = hamburgerButton.getAttribute("aria-expanded") === 'true'
+            hamburgerButton.setAttribute('aria-label', isExpanded ? 'Open Navigation Menu' : 'Close Navigation Menu');
+            hamburgerButton.setAttribute("aria-expanded", String(!isExpanded));
+            // ハンバーガーメニューがオン"だった"（閉じられた）場合はspNavをinert化
+            spNav.inert = (isExpanded);
+        });
     });
 }
 
 // スクロールでヘッダーを出し入れする（トップページのみ）
-function headerScroll() {
+function headerToggleTransparent() {
     const header = document.getElementById("header-scroll");
     if (!header) {
         return;
     }
     const windowHeight = window.innerHeight;
     let verticalPosition;
-    window.addEventListener("scroll", function () {
-        verticalPosition = window.scrollY
-        if (verticalPosition > windowHeight) {
-            header.classList.remove("hidden");
-        } else {
-            header.classList.add("hidden");
-        }
-    })
+    verticalPosition = window.scrollY
+    if (verticalPosition > windowHeight) {
+        header.classList.remove("header-transparent");
+    } else {
+        header.classList.add("header-transparent");
+    }
 }
 
 function disableAnimation() {
@@ -98,8 +101,12 @@ function accordion() {
     const accordions = document.getElementsByClassName("accordion__button");
     [...accordions].forEach(accordion => {
         accordion.addEventListener("click", function () {
+            // +/-のアイコンを取得
+            const icon = this.querySelector(".accordion__icon");
             this.classList.toggle("active");
             const isExpanded = this.getAttribute("aria-expanded") === 'true';
+            // アイコンのトグル
+            icon.textContent = isExpanded ? '\u002B' : '\u2212';
             this.setAttribute("aria-expanded", String(!isExpanded));
             // buttonの親要素（h3）の次の要素がコンテンツ
             const panel = this.parentElement.nextElementSibling;

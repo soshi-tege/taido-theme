@@ -10,7 +10,7 @@
         <div class="accordion">
             <h5 class="accordion__h5">
                 <button class="accordion__button" aria-expanded="false" aria-controls="faq-learning">
-                    I would like to learn animation.
+                    I would like to learn animation.<span class="accordion__icon" aria-hidden="true">+</span>
                 </button>
             </h5>
             <div class="accordion__panel" id="faq-learning" id="faq-learning">
@@ -22,7 +22,7 @@
         <div class="accordion">
             <h5 class="accordion__h5">
                 <button class="accordion__button" aria-expanded="false" aria-controls="faq-sharing">
-                    I want to share my anime projects. I want Japanese people to watch it too.
+                    I want to share my anime projects. I want Japanese people to watch it too.<span class="accordion__icon" aria-hidden="true">+</span>
                 </button>
             </h5>
             <div class="accordion__panel" id="faq-sharing">
@@ -35,7 +35,7 @@
 		<div class="accordion">
 		    <h5 class="accordion__h5">
                 <button class="accordion__button" aria-expanded="false" aria-controls="faq-connection">
-                    I want to speak directly with or connect to Japanese animators and production companies.
+                    I want to speak directly with or connect to Japanese animators and production companies.<span class="accordion__icon" aria-hidden="true">+</span>
                 </button>
 		    </h5>
             <div class="accordion__panel" id="faq-connection">
@@ -47,7 +47,7 @@
         <div class="accordion">
             <h5 class="accordion__h5">
                 <button class="accordion__button" aria-expanded="false" aria-controls="faq-employment">
-                    I want to hire an animator or am looking for fellow professionals to work with.
+                    I want to hire an animator or am looking for fellow professionals to work with.<span class="accordion__icon" aria-hidden="true">+</span>
                 </button>
             </h5>
             <div class="accordion__panel" id="faq-employment">
@@ -59,7 +59,7 @@
 		<div class="accordion">
 		    <h5 class="accordion__h5">
                 <button class="accordion__button" aria-expanded="false" aria-controls="faq-question-about-partners">
-                    I have a question about a specific TAIDO partner.
+                    I have a question about a specific TAIDO partner.<span class="accordion__icon" aria-hidden="true">+</span>
                 </button>
 		    </h5>
             <div class="accordion__panel" id="faq-question-about-partners">
@@ -71,7 +71,7 @@
         <div class="accordion">
             <h5 class="accordion__h5">
                 <button class="accordion__button" aria-expanded="false" aria-controls="faq-collaboration">
-                    I want to co-produce an anime with TAIDO.
+                    I want to co-produce an anime with TAIDO.<span class="accordion__icon" aria-hidden="true">+</span>
                 </button>
             </h5>
             <div class="accordion__panel" id="faq-collaboration">
@@ -84,7 +84,7 @@
 		<div class="accordion">
 		    <h5 class="accordion__h5">
                 <button class="accordion__button" aria-expanded="false" aria-controls="faq-interview">
-                    I want to interview TAIDO or its partners.
+                    I want to interview TAIDO or its partners.<span class="accordion__icon" aria-hidden="true">+</span>
                 </button>
 		    </h5>
             <div class="accordion__panel" id="faq-interview">
@@ -96,7 +96,7 @@
         <div class="accordion">
             <h5 class="accordion__h5">
                 <button class="accordion__button" aria-expanded="false" aria-controls="faq-support">
-                    I want to support TAIDO’s activities.
+                    I want to support TAIDO’s activities.<span class="accordion__icon" aria-hidden="true">+</span>
                 </button>
             </h5>
             <div class="accordion__panel" id="faq-support">

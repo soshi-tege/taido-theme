@@ -67,7 +67,7 @@
 
 .hero__credit {
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 5%;
     color: $white;
     font-size: rem(30px);
@@ -296,9 +296,9 @@
     }
 }
 
-.roadmap__subheading::before {
-    content: counter(roadmap);
+.roadmap__number {
     display: inline-flex;
+    margin-right: rem(8px);
     width: 1.2em;
     height: 1.2em;
     align-items: center;
@@ -311,7 +311,6 @@
 }
 
 .roadmap__accent {
-    display: inline-block;
     padding-right: rem(4px);
     font-family: $headline-font;
     font-style: italic;

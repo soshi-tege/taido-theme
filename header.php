@@ -41,4 +41,5 @@
 </head>
 <body>
 <?php get_template_part( 'includes/layout/header' ); ?>
+<div id="drawer" class="drawer-bg" aria-hidden="true"></div>
 <main id="main-content" tabindex="-1">
