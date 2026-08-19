@@ -1,17 +1,24 @@
 @use "base" as *;
 
-.card a {
+.card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: rem(12px);
+    overflow: hidden;
+    padding: 1px;
+    border-radius: 25px;
+    box-shadow: 0 3px 3px 0 gray;
+}
+
+.card__link-block {
     color: inherit;
     text-decoration: none;
+    transition: 0.3s;
+}
 
-    @include mq("md") {
-        display: flex;
-        align-items: flex-start;
-    }
+.card__link-block:hover,
+.card__link-block:focus {
+    scale: 1.02;
+    filter: brightness(1.1);
 }
 
 .card__img {
@@ -20,7 +27,11 @@
 }
 
 .card__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     width: 100%;
+    padding: rem(8px) rem(16px);
 }
 
 .card__meta {
@@ -44,7 +55,7 @@
     margin-bottom: 0;
 
     @include mq("md") {
-        font-size: rem(24px);
+        font-size: rem(22px);
     }
 }
 
@@ -53,6 +64,26 @@
 }
 
 .card__excerpt {
+    flex-grow: 1;
     margin-top: rem(8px);
     font-size: rem(16px);
+}
+
+.card__readmore {
+    display: table;
+    margin-top: rem(24px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: rem(8px) rem(16px);
+    color: $black;
+    background-color: $secondary-color;
+    text-decoration: none;
+    border: 1px solid $black;
+    border-radius: rem(16px);
+    transition: .3s;
+}
+
+.card__readmore:hover,
+.card__readmore:focus {
+    background-color: $accent-color;
 }

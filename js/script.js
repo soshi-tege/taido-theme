@@ -109,11 +109,13 @@ function accordion() {
             icon.textContent = isExpanded ? '\u002B' : '\u2212';
             this.setAttribute("aria-expanded", String(!isExpanded));
             // buttonの親要素（h3）の次の要素がコンテンツ
-            const panel = this.parentElement.nextElementSibling;
+            const panel = this.nextElementSibling;
             if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
+                panel.inert = true;
             } else {
                 panel.style.maxHeight = panel.scrollHeight + "px";
+                panel.inert = false;
             }
         });
     });

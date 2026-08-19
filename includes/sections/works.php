@@ -34,41 +34,41 @@ if ( $the_query->have_posts() ) :
 				$the_query->the_post();
 				?>
 				<li class="cards__item card fade-in animation-viewport">
-					<a href="<?php echo esc_url( get_permalink() ); ?>">
-						<?php
-						// サムネイル画像を取得（無い場合テーマ内蔵のNo Imageを表示）.
-						$this_id = get_post_thumbnail_id();
-						$img     = wp_get_attachment_image_src( $this_id );
-						if ( $img ) {
-							$src = $img[0];
-						} else {
-							$src = get_template_directory_uri() . '/images/common/noimage.jpg';
-						}
-						?>
-						<!-- サムネイルは装飾画像のためaltは指定しない -->
-						<img src="<?php echo esc_url( $src ); ?>" alt="" class="card__img">
-						<div class="card__info">
-							<time datetime="<?php the_time( 'Y-m-d' ); ?>" class="card__time">
-					            <?php the_time( 'F j, Y' ); ?>
-					        </time>
-							<?php
+					<a class="card__link-block" href="<?php the_permalink(); ?>">
+    					<?php
+    					// サムネイル画像を取得（無い場合テーマ内蔵のNo Imageを表示）.
+    					$this_id = get_post_thumbnail_id();
+    					$img     = wp_get_attachment_image_src( $this_id );
+    					if ( $img ) {
+    						$src = $img[0];
+    					} else {
+    						$src = get_template_directory_uri() . '/images/common/noimage.jpg';
+    					}
+    					?>
+    					<!-- サムネイルは装飾画像のためaltは指定しない -->
+    					<img src="<?php echo esc_url( $src ); ?>" alt="" class="card__img">
+    					<div class="card__info">
+    						<time datetime="<?php the_time( 'Y-m-d' ); ?>" class="card__time">
+    				            <?php the_time( 'F j, Y' ); ?>
+    				        </time>
+    						<?php
                                 $title = get_the_title();
                                 if ( $title ):
-								// タイトルを30字以内にしHTMLを省略する.
-								$title = sanitize_and_truncate_text( $title );
-								?>
-							<h3 class="card__heading"><?php echo esc_html( $title ); ?></h3>
-							<?php endif; ?>
-							<?php
-								// 長すぎる抜粋を短縮.
-								$excerpt = get_the_excerpt();
-								if ( $excerpt ):
-								$excerpt = sanitize_and_truncate_text( $excerpt, 90 );
-								?>
-							<p class="card__excerpt"><?php echo esc_html( $excerpt ); ?></p>
-							<?php endif; ?>
-						</div>
-					</a>
+    							// タイトルを30字以内にしHTMLを省略する.
+    							$title = sanitize_and_truncate_text( $title );
+    							?>
+    						<h3 class="card__heading"><?php echo esc_html( $title ); ?></h3>
+    						<?php endif; ?>
+    						<?php
+    							// 長すぎる抜粋を短縮.
+    							$excerpt = get_the_excerpt();
+    							if ( $excerpt ):
+    							$excerpt = sanitize_and_truncate_text( $excerpt, 90 );
+    							?>
+    						<p class="card__excerpt"><?php echo esc_html( $excerpt ); ?></p>
+    						<?php endif; ?>
+    					</div>
+    				</a>
 				</li>
 					<?php
 				endwhile;

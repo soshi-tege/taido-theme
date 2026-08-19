@@ -51,6 +51,22 @@ html.skip-preloader .preloader {
     height: 100%;
 }
 
+.preloader__logo>img {
+    max-height: 30dvh;
+}
+
+.preloader__icon>img {
+    max-height: 80dvh;
+}
+
+.preloader__logo>img,
+.preloader__icon>img {
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
 .preloader__icon {
     position: absolute;
     top: 50%;
