@@ -6,7 +6,7 @@
         <h3 class="cta__subheading">
 			Frequently Asked Questions
 		</h3>
-		<h4 class="cta__h4">Questions About Learning Anime Creation</h4>
+		<h4 class="cta__h4">Questions About Learning Anime Production</h4>
 		<ul class="accordion">
             <li class="accordion__item">
                 <button class="accordion__button" aria-expanded="false" aria-controls="faq-learning">
