@@ -30,6 +30,8 @@ function hamburgerControl() {
     const spNav = document.getElementById('sp-nav');
     const drawer = document.getElementById("drawer");
     const body = document.body
+    const main = document.getElementById('main-content');
+    const footer = document.getElementById('footer');
     const triggerElements = [drawer, hamburgerButton];
     triggerElements.forEach(element => {
         element.addEventListener('click', function () {
@@ -42,6 +44,9 @@ function hamburgerControl() {
             hamburgerButton.setAttribute("aria-expanded", String(!isExpanded));
             // ハンバーガーメニューがオン"だった"（閉じられた）場合はspNavをinert化
             spNav.inert = (isExpanded);
+            // mainとfooterは逆の状態を適応
+            main.inert = (!isExpanded);
+            footer.inert = (!isExpanded);
         });
     });
 }
