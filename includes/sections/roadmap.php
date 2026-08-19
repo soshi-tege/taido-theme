@@ -13,8 +13,8 @@
         <div class="roadmap__scroll">
             <ol class="roadmap__list">
                 <li class="roadmap__item">
-                    <h3 class="roadmap__subheading animation-viewport pop-up">
-                        <span class="roadmap__number" aria-hidden="true">1</span><em class="roadmap__accent">Learn</em> Animation
+                    <h3 class="roadmap__subheading animation-viewport pop-up" aria-label="Learn Animation">
+                        <span class="roadmap__number" aria-hidden="true">1</span><em class="roadmap__accent" aria-hidden="true">Learn</em> <span aria-hidden="true">Animation</span>
                     </h3>
                     <p class="roadmap__paragraph">
                         Anime creation is not magic: it’s a result of collaboration across many animators who know the same ground of how anime should be created. A little flavor of creativity makes each animator unique: but everyone starts with practicing elementary shapes.<br><br>
@@ -22,8 +22,8 @@
                     </p>
                 </li>
                 <li class="roadmap__item">
-                    <h3 class="roadmap__subheading animation-viewport pop-up">
-                        <span class="roadmap__number" aria-hidden="true">2</span><em class="roadmap__accent">Share</em> your animation with the world
+                    <h3 class="roadmap__subheading animation-viewport pop-up" aria-label="Share your animation with the world">
+                        <span class="roadmap__number" aria-hidden="true">2</span><em class="roadmap__accent" aria-hidden="true">Share</em> <span aria-hidden="true">your animation with the world</span>
                     </h3>
                     <p class="roadmap__paragraph">
                         Anime creation is not magic: it’s a result of collaboration across many animators who know the same ground of how anime should be created. A little flavor of creativity makes each animator unique: but everyone starts with practicing elementary shapes.<br><br>
@@ -31,8 +31,8 @@
                     </p>
                 </li>
                 <li class="roadmap__item">
-                    <h3 class="roadmap__subheading animation-viewport pop-up">
-                        <span class="roadmap__number" aria-hidden="true">3</span><em class="roadmap__accent">Connect</em> with your future partners
+                    <h3 class="roadmap__subheading animation-viewport pop-up" aria-label="Connect with your future partners">
+                        <span class="roadmap__number" aria-hidden="true">3</span><em class="roadmap__accent" aria-hidden="true">Connect</em> <span aria-hidden="true">with your future partners</span>
                     </h3>
                     <p class="roadmap__paragraph">
                         Anime creation is not magic: it’s a result of collaboration across many animators who know the same ground of how anime should be created. A little flavor of creativity makes each animator unique: but everyone starts with practicing elementary shapes.<br><br>
