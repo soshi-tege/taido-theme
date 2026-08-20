@@ -8,10 +8,10 @@
                 Have you ever thought of becoming an anime creator? <br>
                 Do you have a story from your culture, life, or world of imagination you want the world to hear?
             </p>
-            <p class="project__paragraph">
+            <p class="projects__paragraph">
                 It is not a talent, nationality, or knowledge that makes you an anime creator—when the unstoppable aspiration explodes in your heart, you become a creator no one can replace.
             </p>
-            <p class="project__paragraph">
+            <p class="projects__paragraph">
                 Our partners collaborated with experienced Japanese animators and anime studios to deliver their traditions and history.<br>
                 We strive to help those seeds of creativity sprout across the continent.
             </p>
