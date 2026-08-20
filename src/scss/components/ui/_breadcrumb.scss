@@ -1,0 +1,7 @@
+@use "base" as *;
+
+.breadcrumb__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 rem(8px);
+}

@@ -43,3 +43,14 @@
 <?php get_template_part( 'includes/layout/header' ); ?>
 <div id="drawer" class="drawer-bg" aria-hidden="true"></div>
 <main id="main-content" tabindex="-1">
+<?php if ( function_exists ( 'bcn_display' ) && ! is_front_page() ) : ?>
+<section class="breadcrumb">
+	<div class="breadcrumb__inner inner">
+	    <nav class="breadcrumb__nav">
+	        <ul class="breadcrumb__items">
+        		<?php bcn_display(); ?>
+	        </ul>
+	    </nav>
+    </div>
+</section>
+<?php endif; ?>
